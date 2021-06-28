@@ -1,0 +1,270 @@
+---
+title: "Exploratory Data Analysis"
+output: html_notebook
+---
+
+# Exploratory Data Analysis
+
+## Reading The Data
+
+```{r setup}
+knitr::opts_knit$set(root.dir = '../../..') # this should be knitted from the repo root directory
+```
+
+```{r}
+
+source("../../scripts/setup.R")
+source("../../scripts/funcs/data.R")
+source("../../scripts/funcs/io.R")
+```
+
+# Filter instances
+
+Read the data from the data folder, separated by baseline features and questionnaires.
+
+```{r}
+baseline <- read_dta(baseline_features_file, encoding = "latin1")
+cisr <- read_dta(questions_cisr_w1_file, encoding = "latin1")
+
+original_features <- length(baseline) + length(cisr) - 2 + 1 # do not count IDELSA present in both, include one var from MED
+original_instances <- nrow(baseline)
+cat("orignal/raw: instances =", original_instances, "features =", original_features, fill = T)
+```
+
+```{r}
+# remove rows that do not have TMC if restricting population
+x <- baseline[baseline$mentalvar_A_TMC == 1,]
+x <- drop_na(x, idelsa)
+tmc_filtered_instances <- nrow(x)
+cat("TMC-filtered: instances =", tmc_filtered_instances, "features =", original_features, fill = T)
+```
+
+# Filter Features
+
+## Information Leakage
+
+```{r}
+vars_with_info_leak <- c(
+  "mentalvar_A_ESCORETOTAL", # recomputed later
+  "mentalvar_A_TMC",
+  "mentalvar_A_TMCGRAV",
+  "mentalvar_a_DEP",
+  "mentalvar_A_DEPLEVSSINT",
+  "mentalvar_A_DEPLEVCSINT",
+  "mentalvar_A_DEPMODSSINT",
+  "mentalvar_A_DEPMODCSINT",
+  "mentalvar_A_DEPGRAVE",
+  "mentalvar_A_SINTIDEIADEP",
+  "mentalvar__TMAD",
+  "mentalvar_MDD_trajectories",
+  "mentalvar_only_incident",
+  "mentalvar_only_remitted"
+)
+
+x %<>%
+  # remove features that would cause information leakage
+  select(-vars_with_info_leak) %>%
+  # add antidepressants information
+  left_join(by = IDELSA, y = read_dta(baseline_meds_file)
+    %>%
+    select(
+      all_of(IDELSA),
+      all_of(ANTIDEPRESSANTS)
+    )) %>%
+  # add CIS-R variables except H6, H8 and H9
+  left_join(by = IDELSA, y = cisr %>%
+    select( # exclude outcomes
+      -(cisah6:cisah9b)
+    ) %>%
+    select(-c( # exclude variables we can't impute
+      cisaa8, # CIS-R A
+      cisab3, cisab3a, cisab9, # CIS-R B
+      cisac8, # CIS-R C
+      cisad4, cisad4a, cisad10, # CIS-R D
+      cisae4, cisae10, # CIS-R E
+      cisag8a1:cisag8a12, cisag8b, cisag10, # CIS-R G
+      cisai3a1:cisai3a12, cisai3b, cisai10, # CIS-R I
+      cisaj9a1:cisaj9a7, cisaj11, # CIS-R J
+      cisak3a1:cisak3a8, cisak3b1:cisak3b8, cisak5a1:cisak5a7, cisak8, # CIS-R K
+      cisal5, cisal7, # CIS-R L
+      cisam3, cisam6, cisam8, # CIS-R M
+      cisan3, cisan8 # CIS-R N
+    )) %>%
+    mutate( # impute variables with HIGHEST option
+      cisaa4 = replace_na(cisaa4, 3),
+      cisaa6 = replace_na(cisaa6, 3),
+      cisab4 = replace_na(cisab4, 3),
+      cisac4 = replace_na(cisac4, 3),
+      cisac5 = replace_na(cisac5, 1),
+      cisad3 = replace_na(cisad3, 3),
+      cisad6 = replace_na(cisad6, 3),
+      cisad9 = replace_na(cisad9, 3),
+      cisae3 = replace_na(cisae3, 3),
+      cisae8 = replace_na(cisae8, 1),
+      cisae9 = replace_na(cisae9, 1),
+      cisaf3 = replace_na(cisaf3, 3),
+      cisaf5 = replace_na(cisaf5, 3),
+      cisaf6 = replace_na(cisaf6, 1),
+      cisag2 = replace_na(cisag2, 1),
+      cisag5 = replace_na(cisag5, 1),
+      cisag6 = replace_na(cisag6, 3),
+      cisag9 = replace_na(cisag9, 1),
+      cisah1 = replace_na(cisah1, 1),
+      cisah2 = replace_na(cisah2, 3),
+      cisai6 = replace_na(cisai6, 3),
+      cisai8 = replace_na(cisai8, 3),
+      cisaj5 = replace_na(cisaj5, 2),
+      cisaj6 = replace_na(cisaj6, 3),
+      cisaj8 = replace_na(cisaj8, 3),
+      cisak4 = replace_na(cisak4, 3),
+      cisak7 = replace_na(cisak7, 3),
+      cisal2 = replace_na(cisal2, 3),
+      cisal3 = replace_na(cisal3, 3),
+      cisam2 = replace_na(cisam2, 3),
+      cisam7 = replace_na(cisam7, 3),
+      cisan2 = replace_na(cisan2, 2),
+      cisan4 = replace_na(cisan4, 3),
+      cisan7 = replace_na(cisan7, 2)
+    ) %>%
+    modify2( # impute other variables with LOWEST option
+      colnames(.),
+      function(col, name) {
+        if (name == IDELSA) col
+        else replace_na(col, min(col, na.rm = TRUE))
+      }
+    ) %>% # recalculate mentalvar_A_ESCORETOTAL without h6, h8, h9
+    mutate( # backup some variables we'll alter
+      backup_cisac5 = cisac5,
+      backup_cisae8 = cisae8,
+      backup_cisae9 = cisae9,
+      backup_cisaf6 = cisaf6,
+      backup_cisag5 = cisag5,
+      backup_cisag9 = cisag9
+    ) %>%
+    mutate_at(vars( # create inverted variables so we can sum with them
+      cisac5, cisae8, cisae9, cisaf6, cisag5, cisag9
+    ), ~(. - 1) * -1  # vector with 0s and 1s ==> [0 -> -1 -> 1, 1 -> 0 -> 0]
+    ) %>%
+    mutate( # for each row, the score is the sum of the values of some variables
+      mentalvar_a_ESCORETOTAL = pmap_dbl(
+        .f = sum,
+        .l = select(
+          .,
+          cisaa4, cisaa5, cisaa6, cisaa7,
+          cisab4, cisab5, cisab6, cisab7, cisab8,
+          cisac4, cisac5, cisac6, cisac7,
+          cisad5, cisad6, cisad8, cisad9,
+          cisae3, cisae5, cisae6, cisae8, cisae9,
+          cisaf3, cisaf4, cisaf6,
+          cisag5, cisag6, cisag7, cisag9,
+          cisah4, cisah5,
+          cisai6, cisai7, cisai8, cisai9,
+          cisaj6, cisaj8, cisaj9, cisaj10,
+          cisak4, cisak5, cisak7,
+          cisal2, cisal3, cisal4,
+          cisam2, cisam4, cisam5, cisam7,
+          cisan4, cisan5, cisan6, cisan7,
+        )
+      )
+    ) %>%
+    mutate( # restore from backup variables
+      cisac5 = backup_cisac5,
+      cisae8 = backup_cisae8,
+      cisae9 = backup_cisae9,
+      cisaf6 = backup_cisaf6,
+      cisag5 = backup_cisag5,
+      cisag9 = backup_cisag9
+    ) %>%
+    select( # remove backup variables
+      -(backup_cisac5:backup_cisag9)
+    )
+  ) %>%
+  select(-all_of(IDELSA))
+
+cat("IL removed", length(vars_with_info_leak) - 1, fill = T)
+dim(x)
+```
+
+## Missing Values
+
+```{r}
+# remove features above NA threshold
+nas <- as_tibble(map(x, ~sum(is.na(.)))) %>% gather(key = "variable", value = "NAs")
+nas$NAs <- nas$NAs / nrow(x)
+vars_with_tolerable_na <- filter(nas, NAs <= NA_THRESHOLD)$variable
+vars_with_too_many_nas <- filter(nas, NAs > NA_THRESHOLD)$variable
+x <- x[, vars_with_tolerable_na]
+
+cat("NA removed:", length(vars_with_too_many_nas), fill = T)
+dim(x)
+```
+
+## Free-text
+
+```{r}
+# see why removed non-numeric in scripts/factor_analysis.R
+nums <- sapply(x, is.numeric)
+x <- x[, nums]
+
+vars_with_free_text <- names(nums[nums == FALSE])
+cat("FT removed:", length(vars_with_free_text), fill = T)
+dim(x)
+```
+## Result
+
+```{r}
+
+n_remaining_feat <- length(x)
+n_info_leak <- length(vars_with_info_leak) - 1 + 4
+n_many_nas <- length(vars_with_too_many_nas) + 75 # cisr vars with many nas removed prior to filter
+n_free_text <- length(vars_with_free_text)
+
+options(pillar.sigfig = 5)
+data_cleansing_report <- tribble(
+  ~atribute_set, ~set_size,
+  "Total (uncleansed)", paste0(original_features, " (", 100 * 1, "%)"),
+  "Removed (information leakage)", paste0(n_info_leak, " (", 100 * n_info_leak / original_features, "%)"),
+  "Removed (NA excess)", paste0(n_many_nas, " (", 100 * n_many_nas / original_features, "%)"),
+  "Removed (free text)", paste0(n_free_text, " (", 100 * n_free_text / original_features, "%)"),
+  "Remaining (cleansed)", paste0(n_remaining_feat, " (", 100 * n_remaining_feat / original_features, "%)")
+)
+dim(x)
+data_cleansing_report
+```
+# Class Distribution
+
+```{r}
+y_raw <- get_outcomes(MODE_PRESENCE, LABEL_H) %>% select(Class)
+y_tmc <- get_data(MODE_PRESENCE, LABEL_H, TRUE) %>% select(Class)
+cat("[raw] class distribution:", fill = T)
+table(y_raw$Class)
+cat("[tmc] class distribution:", fill = T)
+table(y_tmc$Class)
+raw_positives <- length(keep(y_raw$Class, ~. == "POSITIVE"))
+tmc_positives <- length(keep(y_tmc$Class, ~. == "POSITIVE"))
+cat("raw2tmc lost positives:", raw_positives - tmc_positives, "(", 100 * (raw_positives - tmc_positives) / raw_positives, "%)", fill = T)
+cat("[raw] class balance:", 100 * raw_positives / nrow(y_raw), fill = T)
+cat("[tmc] class balance:", 100 * tmc_positives / nrow(y_tmc), fill = T)
+```
+# Features Descriptions
+
+Vars with info leak
+```{r}
+descriptions <- get_features_descriptions(vars_with_info_leak)
+print(descriptions, n = nrow(descriptions))
+readr::write_csv(descriptions, file.path(SUMMARY_FOLDER_NAME, "removed_info_leak.csv"))
+```
+
+Vars with too many NAs
+```{r}
+descriptions <- get_features_descriptions(vars_with_too_many_nas)
+print(descriptions, n = nrow(descriptions))
+readr::write_csv(descriptions, file.path(SUMMARY_FOLDER_NAME, "removed_nas.csv"))
+```
+
+Vars with free text
+```{r}
+descriptions <- get_features_descriptions(vars_with_free_text)
+print(descriptions, n = nrow(descriptions))
+readr::write_csv(descriptions, file.path(SUMMARY_FOLDER_NAME, "removed_free_text.csv"))
+```

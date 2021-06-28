@@ -1,0 +1,122 @@
+---
+title: "Exploratory Data Analysis"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*.
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+# Exploratory Data Analysis
+
+## Reading The Data
+
+Load required libraries. Throughout this notebook, we'll be using `tidyverse` (installed with `install.packages("tidyverse")`).
+
+```{r}
+library(tidyverse)
+library(haven)
+```
+
+Read the data from the data folder, separated by baseline features and questionnaires.
+
+```{r}
+features <- read_dta("../../data/baseline_features.dta")
+questions_w1 <- read_dta("../../data/questions_cisr_wave1.dta")
+questions_w2 <- read_dta("../../data/questions_cisr_wave2.dta")
+dim(features)
+dim(questions_w1)
+dim(questions_w2)
+```
+
+### Outcome Variables (Questionnaires)
+
+Let's explore our the outcome variables. First we take a brief look at their format and distribution. Note that indices 1 equate to "NO"s while indices 2 correspond to "YES" answers.
+
+```{r}
+table(questions_w1$cisah6)
+table(questions_w1$cisah8)
+table(questions_w1$cisah9a)
+table(questions_w2$CISBH6)
+table(questions_w2$CISBH8)
+table(questions_w2$CISBH9A)
+```
+
+Now let's explain each. For that, we must understand the questionnaire flow.
+
+Every participant answered question G1. Of those, only the ones who responded positively followed to question G4. Analagously, everyone answered G2, but only the ones who responded negatively were prompted G5.
+
+
+```{r}
+g1 <- table(questions_w2$CISBG1)
+g2 <- table(questions_w2$CISBG2)
+g4 <- table(questions_w2$CISBG4)
+g5 <- table(questions_w2$CISBG5)
+
+cat(g1[2], "felt sad in last 30 days\n") # index 2 for YES
+cat(g4[2], "felt sad in last 7 days\n") # index 2 for YES
+cat(g2[1], "couldn't enjoy what they'd used to in last 30 days\n") # index 1 for NO
+cat(g5[1], "couldn't enjoy what they'd used to in last 7 days\n") # index 1 for NO
+
+ggplot(data = questions_w2, aes(x = CISBG1, fill = factor(CISBG4, labels = c("yes", "no")))) +
+  geom_bar(stat = "count") +
+  theme_minimal()
+ggplot(data = questions_w2, aes(x = CISBG2, fill = factor(CISBG5, labels = c("yes", "no")))) +
+  geom_bar(stat = "count") +
+  theme_minimal()
+```
+
+#### CIS-R H6 (hopelessness)
+
+Participants who answered positivelly to G4 and negatively to G5 followed to section H, answering H4, H5 and **H6 (our first outcome variable)**. It's also worth noting that they've also answered G8, which gives an explanation on the factors to their sadness.
+
+```{r}
+# Question H4
+ggplot(data = questions_w2) +
+  geom_bar(mapping = aes(x = CISBH4))
+h4 <- table(questions_w2$CISBH4)
+cat(h4[2], "felt guilty in last 7 days") # index 2 for YES
+
+# Question H5
+ggplot(data = questions_w2) +
+  geom_bar(mapping = aes(x = CISBH5))
+h5 <- table(questions_w2$CISBH5)
+cat(h5[2], "felt not as good as others in last 7 days") # index 2 for YES
+
+# Question H6
+ggplot(data = questions_w2) +
+  geom_bar(mapping = aes(x = CISBH6))
+h6 <- table(questions_w2$CISBH6)
+cat(h6[2], "felt hopeless in last 7 days") # index 2 for YES
+```
+
+#### CIS-R H8 (*taedium vitae*)
+
+The participants who answered YES to H4, H5 or H6 were asked **H8 (our second outcome variable)**.
+
+```{r}
+# People that answered H4=YES or H5=YES or H6=YES answered H8
+ggplot(data = questions_w2) +
+  geom_bar(mapping = aes(x = CISBH8))
+h8 <- table(questions_w2$CISBH8)
+cat(sum(h8[2:3]), "felt life was not worth living") # indices 2 & 3 for YES & YES*
+```
+
+#### CIS-R H9 (suicide ideation)
+
+Finally, only the participants who answered YES (in the last 7 days) were prompted to answer **H9, our last outcome variable**.
+
+```{r}
+# People that answered H8=YES (only in last 7 days) answered H9
+ggplot(data = questions_w2) +
+  geom_bar(mapping = aes(x = CISBH9A))
+h9 <- table(questions_w2$CISBH9A)
+cat(sum(h9[2:3]), "thought about commiting suicide") # indices 2 & 3 for YES & YES*
+```
+

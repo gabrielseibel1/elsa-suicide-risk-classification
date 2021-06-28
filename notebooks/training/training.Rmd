@@ -1,0 +1,169 @@
+---
+title: "Training Experimentation"
+author: "Gabriel de Souza Seibel"
+date: "7/4/20"
+output:
+html_document:
+df_print: paged
+html_notebook: default
+pdf_document: default
+---
+
+```{r setup}
+knitr::opts_knit$set(root.dir = '../..') # this should be knitted from the repo root directory
+```
+
+Include some libraries.
+```{r}
+library(tidyverse)
+library(dplyr)
+library(rsample)
+library(doParallel)
+library(MLmetrics)
+library(mlr)
+library(DMwR)
+library(recipes)
+library(themis)
+library(randomForest)
+library(caret)
+```
+
+Establish parallel backend (workers/nnodes and cores could be changed on other machines)
+```{r}
+cluster <- makeForkCluster(8, outfile = "")
+registerDoParallel(cl = cluster, cores = 4)
+```
+
+Get data for the most balanced configuration
+```{r}
+source("scripts/funcs/data.R")
+data <- get_data(MODE_PRESENCE, LABEL_H, TRUE)
+dim(data)
+str(data$Class)
+cat("positive class ratio =", data %>% filter(Class == "POSITIVE") %>% nrow() / nrow(data) * 100, "%\n")
+data
+```
+
+Separate some instances for testing later.
+```{r}
+set.seed(42)
+split <- initial_split(data, prop = 9 / 10, strata = Class)
+train_data <- training(split)
+test_data <- testing(split)
+split
+```
+
+Let's try to train a simple model based on the data. First we define some auxiliary functions:
+```{r}
+# fix seeds for reproducibility
+seeds_repeated_cv <- function(K, N, name = "") {
+  n_seeds <- K * N + 1
+  seeds <- vector(mode = "list", length = n_seeds)
+  for (i in 1:n_seeds) seeds[[i]] <- sample.int(1000, 3)
+  seeds[[n_seeds]] <- sample.int(1000, 1)
+  if (name != "") saveRDS(seeds, name)  # save so git status verifies nothing changed
+  seeds
+}
+
+# define preprocessing pipeline to be used within resampling
+preprocess <- function(recipe) { recipe %>%
+  themis::step_downsample(Class, under_ratio = 2, seed = 42) %>%
+  recipes::step_meanimpute(all_predictors()) %>%
+  recipes::step_nzv(all_predictors()) %>%
+  recipes::step_corr(all_predictors()) %>%
+  themis::step_smote(Class, over_ratio = 1, neighbors = 5, seed = 42)
+}
+
+# define metric for model evaluation and optimization
+f2_summary <- function(data, lev = NULL, model = NULL) {
+  c(F2 = F_meas(data = data$pred, reference = data$obs, relevant = "POSITIVE", beta = 2))
+}
+```
+
+Now we can define and fit our model. We'll use an RFE wrapper around standard training.
+```{r}
+algorithm <- "rf"
+metric <- "F2"
+resampling_method <- "repeatedcv"
+
+# define the inner model to be used by the wrapper
+fit_model <- function(x, y, first, last, ...) {
+  # define resampling structure and seeds
+  inner_cv_k <- 10
+  inner_cv_n <- 1
+  inner_seeds <- seeds_repeated_cv(inner_cv_k, inner_cv_n)
+  inner_folds <- rsample2caret(vfold_cv(train_data, v = inner_cv_k, repeats = inner_cv_n, strata = Class))
+
+  train_data <- x
+  train_data$Class <- y
+
+  # train random forest
+  caret::train(
+    recipe(Class ~ ., data = train_data) %>% preprocess(), train_data,
+    method = algorithm,
+    metric = metric,
+    trControl = trainControl(
+      method = resampling_method, number = inner_cv_k, repeats = inner_cv_n,
+      index = inner_folds$index, indexOut = inner_folds$indexOut,
+      seeds = inner_seeds, verboseIter = TRUE,
+      classProbs = TRUE, summaryFunction = f2_summary
+    )
+  )
+}
+
+# define resampling folds (RFE wrapper with repeated CV)
+rfe_cv_k <- 10
+rfe_cv_n <- 1
+rfe_folds <- rsample2caret(vfold_cv(train_data, v = rfe_cv_k, repeats = rfe_cv_n, strata = Class))
+rfe_seeds <- seeds_repeated_cv(rfe_cv_k, rfe_cv_n, "notebooks/training/seeds.rds")
+
+# train a recursive feature elimination wrapper around the `fit_model` function
+funcs <- caretFuncs
+funcs$summary <- f2_summary
+funcs$fit <- fit_model
+x <- train_data
+y <- train_data$Class
+x$Class <- NULL
+model <- caret::rfe(x, y,
+                    method = algorithm,
+                    metric = metric,
+                    sizes = c(10, 20, 30, 50, 100),
+                    rfeControl = rfeControl(
+                      method = resampling_method, number = rfe_cv_k, repeats = rfe_cv_n,
+                      index = rfe_folds$index, indexOut = rfe_folds$indexOut, functions = funcs,
+                      seeds = rfe_seeds, verbose = TRUE, allowParallel = FALSE,
+                    )
+)
+
+stopCluster(cluster)
+
+saveRDS(model, "notebooks/training/model.rds")
+
+model
+```
+
+How does our model perform on test data?
+```{r}
+test <- predict(model, test_data, type = "prob")
+test$obs <- test_data$Class
+
+cm <- confusionMatrix(test$pred, test$obs, "POSITIVE", mode = "prec_recall")
+metrics <- enframe(c(
+  F2 = F_meas(data = test$pred, reference = test$obs, relevant = "POSITIVE", beta = 2),
+  prSummary(test, CLASS_LABELS, model),
+  twoClassSummary(test, CLASS_LABELS, model),
+  brier = measureBrier(test$POSITIVE, test$obs, "NEGATIVE", "POSITIVE")
+))
+metrics[metrics$"name" == "AUC",]$name <- "PRAUC"
+metrics[metrics$"name" == "ROC",]$name <- "ROCAUC"
+
+options(pillar.sigfig = 5)
+
+sink("notebooks/training/output.txt", split = TRUE)
+cat("\n\n-------------------- Model --------------------\n\n")
+model
+cat("\n\n-------------------- Evaluation --------------------\n\n")
+cm
+metrics
+sink()
+```

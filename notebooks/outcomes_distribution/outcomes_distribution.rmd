@@ -1,0 +1,115 @@
+---
+title: "Prediction Types and Data Filters"
+author: "Gabriel de Souza Seibel"
+date: "3/7/20"
+output:
+html_document:
+df_print: paged
+html_notebook: default
+pdf_document: default
+---
+
+```{r setup}
+knitr::opts_knit$set(root.dir = '../..') # this should be knitted from the repo root directory
+```
+
+# Prediction Types
+
+We'll analyse some facets of the data from ELSA. Some data filters will be implemented in order to predict:
+
+1. **Presence** of symptoms
+2. **Incidence** of symptoms
+3. **Persistence** of symptoms
+4. **Remission** of symptoms
+
+Note that the presence and incidence prediction models have two variants each. The first variant includes all instances
+of the respective scope ("general population"), while the second variant includes only instances that present some specific
+psychological predictors (i.e. `mentalvar_A_TMC`) that motivate an assessment of the suicide ideation risk.
+
+# Predictions Specifications
+
+Below follows a table that summarizes some characteristics of the prediction types:
+
+|    Model    | Predictor Wave | Predictor CIS\-R Labels Subset | Outcome Wave | Outcome CIS\-R Labels |
+|-------------|----------------|--------------------------------|--------------|-----------------------|
+| Presence    | 1              | \-                             | 1            | Positive              |
+| Incidence   | 1              | Negative                       | 2            | Positive              |
+| Persistence | 1              | Positive                       | 2            | Positive              |
+| Remission   | 1              | Positive                       | 2            | Negative              |
+
+```{r}
+
+source("scripts/setup.R")
+source("scripts/funcs/data.R")
+
+library(future)
+library(furrr)
+plan(multicore)
+```
+
+
+```{r}
+configs <- get_all_data_configs()
+configs$data <- future_pmap(list(configs$mode, configs$label, configs$symptoms), get_data)
+with_data <- configs
+
+to_total_count <- function(data) { nrow(data) }
+to_positive_class_count <- function(data) { data %>% filter(Class == "POSITIVE") %>% count() }
+to_negative_class_count <- function(data) { to_total_count(data) - to_positive_class_count(data) }
+to_positive_class_percentage <- function(data) { 100 * to_positive_class_count(data) / to_total_count(data) }
+to_negative_class_percentage <- function(data) { 100 * to_negative_class_count(data) / to_total_count(data) }
+
+configs$total <- configs$data %>% map(to_total_count) %>% unlist()
+configs$positive <- configs$data %>%
+  map(to_positive_class_count) %>%
+  unlist()
+configs$negative <- configs$data %>%
+  map(to_negative_class_count) %>%
+  unlist()
+configs$positive_pctg <- configs$data %>%
+  map(to_positive_class_percentage) %>%
+  unlist()
+configs$negative_pctg <- configs$data %>%
+  map(to_negative_class_percentage) %>%
+  unlist()
+configs$data <- NULL
+configs %>% arrange(mode)
+```
+
+Now we describe the exact data subsets related to each model.
+
+## Presence of CIS-R Labels
+
+This model will allow us to understand the profile of people with present suicide ideation.
+
+- **Scopes**: wave 1 instances
+- **General**: all instances
+- **Restricted**: all instances with predictor `mentalvar_A_TMC`
+- **Predictors**: baseline features
+- **Outcomes**: *positive* wave 1 CIS-R labels
+
+## Incidence of CIS-R Labels
+
+This model will allow us to predict future appearance of suicide ideation.
+
+- **Scopes**: wave 1 *negative* CIS-R labelled instances
+- **General**: all instances
+- **Restricted**: all instances with predictor `mentalvar_A_TMC`
+- **Predictors**: baseline features
+- **Outcomes**: *positive* wave 2 CIS-R labels
+
+## Persistence of CIS-R Labels
+
+This model will allow us to predict the continuation of suicide ideation.
+
+- **Scope**: wave 1 *positive* CIS-R labelled instances
+- **Predictors**: baseline features
+- **Outcomes**: *positive* wave 2 CIS-R labels
+
+## Remission of CIS-R Labels
+
+This model will allow us to predict the future reduction/disappearance of suicide ideation.
+
+- **Scope**: wave-1 *positive* CIS-R labelled instances
+- **Predictors**: baseline features
+- **Outcomes**: *negative* wave 2 CIS-R labels
