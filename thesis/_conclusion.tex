@@ -1,0 +1,71 @@
+In this chapter, we first reflect on our original goals and the contributions of the current work for the related literature.
+Next, we discuss the limitations of the proposed solutions and enhancement opportunities that could be explored in future works.
+
+
+\section{Contributions and Impact}\label{sec:contributions-and-impact}
+
+\begin{table}[h]
+    \caption{Performance estimates of related works compared to ours, ordered by F\textsubscript{2}-Score}
+    \begin{center}
+        \begin{tabular}{c|c|c|c|c|c}
+            \textit{Paper} & \textit{Algorithm} & \textit{F\textsubscript{2}-Score} & \textit{AUCROC} & \textit{Sensitivity} & \textit{Specificity} \\
+            \hline
+            \hline
+            A              & XGB                & \textbf{0.84}                     & 0.86            & 0.79                 & \textbf{0.79}        \\
+            B              & ANNs + RF          & 0.71                              & \textbf{0.88}   & 0.80                 & 0.79                 \\
+            Ours           & EN + ANN + RF      & 0.69                              & 0.81            & 0.78                 & 0.67                 \\
+            C              & ANN                & 0.48                              & 0.88            & \textbf{0.81}        & 0.77                 \\
+            D              & EN                 & 0.45                              & 0.79            & 0.67                 & 0.78                 \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \legend{Source: The Author
+
+    A: ~\cite{Jung2019};
+
+    B: ~\cite{Roy2020};
+
+    C: ~\cite{Oh2020};
+
+    D: ~\cite{Librenza-Garcia2020}}.
+    \label{tab:related-work-vs-ours}
+\end{table}
+
+This study proposed and thoroughly tested a solution for identifying patterns of suicidality in a population of Brazilian adults based on data available in the first wave of the ELSA-Brasil study.
+Suicidality is defined as the presence of hopelessness, feelings that life is not worth living, and suicidal thoughts.
+We made use of special ML techniques chosen based on the challenges and goals of our mission, such that our approach to the problem was focused on minimizing false negative errors (as they are extremely detrimental in our domain) by mitigating the effect of the fewer number of examples labeled as the positive class and yielding high interpretability and insightful knowledge for physicians and clinicians from the produced classifiers.
+Thus, although our methodology could be applied to other datasets, our findings in this study elucidate patterns of suicidality in the specific population subset of Brazilian public servants with common mental disorders and do not necessarily directly apply to a more general population.
+Nevertheless, we believe the attainment of our goals carries high practical and academic value for dealing with the grave worldwide problem of suicide.
+
+Although direct comparisons to the studies mentioned in Chapter~\ref{ch:related_work} cannot yield fair rankings of performance estimates, given all of them use different datasets (except for~\citet{Librenza-Garcia2020}), it is important to contextualize the findings of this work among the related literature.
+That said, in relation to other works with similar objectives but with varying domain particularities, the estimated performance of our models was decently comparable, specially for the F\textsubscript{2}-Score - our optimization metric.
+As shown in Table~\ref{tab:related-work-vs-ours}, we achieved very good results in terms of F\textsubscript{2}-Score with our weighted-average ensemble model.
+With a mean value of 0.69, our estimated F\textsubscript{2}-Score is close to the second-best work of the table~\cite{Roy2020}.
+This promising performance indicator is considerably higher than the ones estimated in~\citet{Oh2020} and~\cite{Librenza-Garcia2020}, with similar data and objectives.
+
+We note that most works do not report the F\textsubscript{2}-Score, and focus on AUCROC, sensitivity, and specificity instead.
+The mean area under the ROC curve of our ensemble is, as the other work in the table using the ELSA-Brasil dataset~\cite{Librenza-Garcia2020}, close to 0.8, while other works are closer to the 0.9 mark.
+Nonetheless, our results emphasize the importance of using metrics alternative to AUCROC as it does not take precision into account and, thus, can show very satisfactory results even when the models present low true positive rates.
+Even though in this work sensitivity and specificity did not achieve results as high as the best ones reported in the related literature, our models presented acceptable scores for these metrics.
+
+Also, our analysis provides important insights about the most relevant features associated with suicidality, which after further investigation by specialists may contribute to new strategies to prevent suicidal ideation and attempts.
+Finally, we highlight that during the development of this work we were very careful regarding the methodological and reporting rigor of our research, especially concerning strategies to minimize data leakage and selection biases during model development, which although may result in lower performance provide us with higher confidence regarding the generalization power of our models.
+
+
+\section{Possible Improvements}\label{sec:possible-improvements}
+
+The first limitation of this work is that it was mainly focused on the computational aspects of the discussed matters, thus it did not examine with all the possible depth the relations between and the explanations of the attributes found to be of most importance to the models.
+Also, although we went through what are the most relevant attributes to predict suicidality, since our models are non-linear (safe for the elastic net), we are not able to discuss how variations in each attribute affect the output with the provided analysis material.
+Therefore, subsequent studies could analyse how the classification probability varies for each of them, or at least to the most important ones, using for instance Partial Dependence Plots.
+With that, stakeholders would have more accurate quantitative insights on the factors related to the class of interest.
+Similarly, the understanding of the models could be enriched by an analysis of the commonalities and patterns in the data that cause most classification errors (mainly the false negatives).
+
+Considering the induction of the models to solve our problem, we could also explore different techniques.
+Cost-sensitive learning could be implemented and integrated into the procedure, possibly introducing more variation and richness to the constitution of the ensemble, but also a great model by itself.
+Other algorithm-level methods to mitigate the class-imbalance problem could be employed, using learners that naturally deal with this such as AdaBoost or eXtreme Gradient Boosting (XGB), or calibrating the probabilities predicted by our model~\cite{Niculescu-Mizil2005}.
+These changes would not only provide richness and novelty to the body of literature of the suicidality prediction domain, but also preserve classification robustness in face of a smaller number of positive class instances, allowing future studies to also tackle other ELSA-Brasil dataset variations that are more unbalanced.
+For example, studies could consider the whole population instead of only the people presenting CMD, have as outcome label just the suicide ideation variable without combining it with others, or attempt to predict the incidence of suicidality and other labels on ELSA-Brasil's wave 2 based on input data of wave 1.
+In terms of data analysed, models could also be built by integrating ELSA-Brasil baseline features georeferenced data, as characteristics related to the geographic location of phenomena may play a role in its occurrence.
+
+Finally, as a more practical application, one could develop user-facing applications to assist clinicians and/or patients and people with common mental disorders.
+The programs could use the knowledge uncovered by this study as a basis for a score associated with or some form of journaling done by the user, such that therapists, psychiatrists, and doctors in general can assess their patients' mental health with more tools and have automated support in their decisions.
