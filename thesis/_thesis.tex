@@ -1,0 +1,142 @@
+\documentclass[ecp,tc,english]{iiufrgs}
+
+% Use unicode
+\usepackage[utf8]{inputenc}   % pacote para acentuação
+\usepackage{mathptmx}          % p/ usar fonte Adobe Times nas fórmulas
+\usepackage{pdfpages}
+\usepackage{textgreek}
+\usepackage{xfrac}
+\usepackage{siunitx}
+\usepackage{float}
+
+\title{Classification of suicidality in a large occupational cohort: an analysis of machine learning algorithms applied to the ELSA-Brasil study}
+
+\author{Seibel}{Gabriel de Souza}
+%\author{Passos}{Ives Cavalcante}
+%\author{Brunoni}{André Russowsky}
+\advisor[Prof.~Dr.]{Mendoza}{Mariana Recamonde}
+
+\date{Dezembro}{2020}
+\location{Porto Alegre}{RS}
+
+% keywords: start with lower case, unless abbreviation
+\keyword{Machine Learning}
+\keyword{Classification}
+\keyword{Suicide}
+\keyword{Suicide Ideation}
+\keyword{ELSA-Brasil}
+%\keyword{?}
+
+\begin{document}
+
+    \maketitle
+
+    \clearpage
+    \begin{flushright}
+        \mbox{}\vfill
+        {\sffamily\itshape
+        ``When you see a man casting pearls without getting even a pork chop in return—it is not against the swine that you feel indignation.
+        It is against the man who valued his pearls so little that he was willing to fling them into the muck and let them become the occasion for a whole concert of grunting, transcribed by the court stenographer.''\\}
+        --- \textsc{Ayn Rand}
+    \end{flushright}
+
+    \chapter*{acknowledgment}
+    A special acknowledgment is given to professors André Russowsky Brunoni, Ives Cavalcante Passos, and Mariana Recamonde Mendoza, for the valuable help and input on this work.
+    As this study relates to both the medical and the informatics fields, their involvement and advising were crucial.
+
+    \begin{abstract}
+        Suicide ideation is strongly correlated to suicide acts, a grave problem for society quantified in hundreds of thousands of deaths per year.
+        Nevertheless, patterns regarding the emergence and presence of suicidal thoughts are not completely elucidated.
+        Techniques from the Machine Learning field of study have shown great potential and success in tackling the problem of identifying or predicting suicidality in individuals, even though they still often face challenges in scenarios where the available data has a small percentage of occurrences of the class of interest.
+        Thus, the main goal of this work is to train and evaluate models to identify instances as presenting \textit{suicidality}, which we refer to as a combination of self-reported suicide ideation, \textit{"taedium vitae"} (feeling that life is not worth living), and hopelessness.
+        We also aim to analyse the factors involved in these models decision-making processes.
+        Our proposed solution to this challenge is a general classifier-induction pipeline for dealing with datasets with class imbalance and feature abundance, which was validated using data obtained from the Brazilian Longitudinal Study of Adult Health (ELSA-Brasil), restricted to a subset only containing people with common mental disorders.
+        Experiments using our approach to fit Elastic Nets, Neural Networks, Random Forests, and to combine them in a probability-averaging ensemble yielded classifiers with over 0.8 area under the receiver operating characteristic curve, F\textsubscript{2}-Score from 0.6 to around 0.7, sensitivity up to 0.8, and specificity of ranging from 0.6 to 0.8 depending on the algorithm.
+        The most important variables in the models' inference of suicidality were related to feelings of inferiority, sadness, disappearance of interests, unnecessary guilt and self-blaming, energy (disposition) levels,  preclusion of activities including chores and leisure for bad feelings, income, anxiety, worrying, libido, irritability, obsession, and physical activities.
+    \end{abstract}
+
+% abstract in second language
+% passed as parameters: title and comma-separated keywords
+    \begin{englishabstract}{Classificação de Suicidalidade em uma vasta coorte ocupacional: uma análise de algoritmos de aprendizado de máquina aplicados ao estudo ELSA-Brasil}{Aprendizado de Máquina, Classificação, Suicídio, Ideação Suicida, ELSA-Brasil}
+
+        Ideação suicida está fortemente correlacionada a atos de suicídio, um problema social grave quantificado em centenas de milhares de mortes por ano.
+        Não obstante, padrões quanto ao surgimento e a presença desses pensamentos não estão completamente elucidados.
+        Técnicas do campo de estudo de aprendizado de máquina já mostraram grande potencial e sucesso para enfrentar o problema de identificar ou prever suicidalidade em indivíduos, apesar de frequentemente encontrarem dificuldades em cenários em que os dados disponíveis têm uma porcentagem pequena de ocorrências da classe de interesse.
+        Portanto, o objetivo deste trabalho é treinar e avaliar modelos para identificar instâncias apresentando \textit{suicidalidade}, a que nos referimos como uma combinação de ideação suicida, \textit{"taedium vitae"} (sentir que a vida não vale a pena ser vivida) e desesperança auto-relatados.
+        Nós também queremos analisar os fatores envolvidos no processo de decisão desses modelos.
+        Nossa solução proposta para esse desafio é um fluxo geral de indução de classificadores para lidar com conjuntos de dados com desbalanço de classe e abundância de atributos, que foi validado usando dados obtidos do Estudo Longitudinal de Saúde do Adulto brasileiro (ELSA-Brasil), restritos a um subconjunto composto apenas por pessoas com transtornos mentais comuns.
+        Experimentos usando nossa abordagem para ajustar modelos de Redes Elásticas, Redes Neurais e Florestas Aleatórias e então combiná-los em um modelo conjunto de média ponderada de probabilidades produziu classificadores com área sob a curva característica de operação do receptor maior que 0.8, Valor-F2 de 0.6 a por aproximadamente 0.7, sensibilidade de até 0.8 e especificidade variando de 0.6 a 0.8 dependendo do algoritmo.
+        As variáveis mais importantes na inferência de suicidalidade pelos modelos são relacionadas a sentimentos de inferioridade, tristeza, desaparecimento de interesses, sensação de culpa mesmo que desnecessária, níveis de energia (disposição), incapacidade de realizar atividades incluindo responsabilidades e lazer por sentimentos ruins, renda, ansiedade, preocupação, libido, irritabilidade, obsessão e atividades físicas.
+    \end{englishabstract}
+
+% list of abreviations
+% passed parameter: longest abbreviatioin
+    \begin{listofabbrv}{ELSA-Brasil}
+        \item[ELSA-Brasil] Longitudinal Study of Adult Health (Brasil)
+        \item[CIS-R] Clinical Interview Schedule - Revised Version
+        \item[MDD] Major Depressive disorder
+        \item[MADD] Mixed Anxiety–Depressive Disorder
+        \item[SLR] Systematic Literature Review
+        \item[ML] Machine Learning
+        \item[EN] Elastic Net
+        \item[MLP] Multilayer Perceptron
+        \item[ANN] Artificial Neural Network
+        \item[RF] Random Forest
+        \item[XGB] eXtreme Gradient Boosting
+        \item[SVM] Support Vector Machine
+        \item[FE] Feature Elimination
+        \item[RFE] Recursive Feature Elimination
+        \item[AUC] Area Under Curve
+        \item[ROC] Receiver Operating Characteristic
+        \item[AUCROC] Area under ROC curve
+        \item[CV] Cross Validation
+        \item[GS] Grid Search
+        \item[NZV] Near-zero variance
+    \end{listofabbrv}
+
+% same for the symbols list
+%\begin{listofsymbols}{$\alpha\beta\pi\omega$}
+%       \item[$\sum{\frac{a}{b}}$] Summation of Product
+%\end{listofsymbols}
+
+    \listoffigures
+    \listoftables
+    \tableofcontents
+
+
+    \chapter{Introduction}\label{ch:introduction}
+    \input{_introduction.tex}
+
+
+    \chapter{Theoretical Background}\label{ch:theoretical-background}
+    \input{_theoretical-background.tex}
+
+
+    \chapter{Related Work} \label{ch:related_work}
+    \input{_related-work.tex}
+
+
+    \chapter{Methodology}\label{ch:methodology}
+    \input{_methods.tex}
+
+
+    \chapter{Experiments and Results}\label{ch:experiments-and-results}
+    \input{_results.tex}
+
+
+    \chapter{Conclusion}\label{ch:conclusions}
+    \input{_conclusion.tex}
+
+    \bibliography{biblio}
+
+    \annex
+
+
+    \chapter{Dataset Variables Descriptions}\label{ch:dataset-variiables-description}
+    \input{_dataset_variables_descriptions.tex}
+
+
+    \chapter{CIS-R Questionnaire}\label{ch:cis-r}
+    \includepdf[pages=-]{cis-r.pdf}
+
+\end{document}

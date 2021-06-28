@@ -1,0 +1,32 @@
+Suicide is a major concern worldwide, given its broad and severe impact: more than 800,000 people die from suicide each year - every 40 seconds, one person takes their own life~\cite{Reid2010a}.
+Suicide globally represents the second highest cause of death among people aged between 15 to 29 years, and it is estimated that about 80\% of the acts occur in developing countries~\cite{WHO2017}.
+Therefore, it is evident the need for actions to better understand its patterns, especially on the population most affected by it, to support the creation of prevention methods.
+
+Within the concept of suicidal behavior, there is the category of suicide ideation (SI; to consider committing suicide, or to think about it in general)~\cite{Reid2010a}.
+Self-reported suicide ideation rates end up being underestimated depending on the interview method~\cite{Spiers2014b}, which could present itself as a methodological limitation on the investigation of suicide causes and associated factors.
+Nevertheless, SI is a strong indicator of vulnerability to suicidal acts~\cite{Bebbington2010}, hence the prevention of the latter could be achieved by better understanding the profile of people affected by the former, ideally predicting its incidence.
+The term "suicidality" has often had a lack of clarity of definition, sometimes generalized up to the point of being conflated with self-injury, but a prevalent and surely constituent characteristic of this concept is \textit{suicide intention}~\cite{Carballo2020}.
+Although suicidality can also be identified in cases of suicide attempts or plans, in this work we specifically refer to it as a proxy to suicide intention, by considering self-reported feelings of hopelessness, or feelings that life is not worth living (also called \textit{"taedium vitae"}), or direct suicide ideation.
+
+In recent years, in a context of an exponential generation and availability of data regarding virtually any phenomena, the computer science field of machine learning, dedicated to deriving knowledge from information, has been steadily growing and flourishing in both academic and business fronts.
+In particular, in a scenario made possible by methodological advancements in machine learning combined with the availability of electronic medical records (EMRs) and socioeconomic and behavioral demographic data, automatic diagnosis or prediction of diseases has had considerable success in supporting physicians and health professionals in general, while also providing a better understanding of studied the phenomena~\cite{Darcy2016}.
+These approaches, however, still oftentimes face challenges in identifying adequate patterns when dealing with data that has fewer examples of one representative class than of the other, which is a recurrent problem for diseases and medical conditions in general~\cite{Burke2019}.
+This has been aptly the "class-imbalance problem".
+
+In Brazil, a dataset with the potential of fruitful employment of machine learning techniques is the one produced by the Longitudinal Study of Adult Health (ELSA-Brasil) cohort study~\cite{Schmidt2015}.
+The study evaluated social and biological factors related to, among other health topics, mental health.
+Moreover, it includes responses to a questionnaire called Clinical Interview Schedule-Revised (CIS-R), with information on the interviewees' self-reported thoughts surrounding suicide ~\cite{Nunes2016, Lewis1992} that compose our labeling of suicidality.
+Although the ELSA-Brasil project has interviewed over 15,000 adults in its first wave, in our study we restrict our analysis to the people presenting common mental disorders (CMD), around 4,000 individuals.
+
+Therefore, we hypothesize that using state-of-the-art machine learning techniques over data from the ELSA-Brasil project, we can build models to identify patterns in suicidality, and based on certain structured characterizations of a person, correctly classify whether they present it.
+Thus, the goal of this work is to develop classifiers able to identify individuals presenting suicidality-associated patterns with high performance, despite data limitations due to the low sample size for this class of interest.
+In addition, we aim to provide useful knowledge regarding factors associated with suicidality that may be further explored by mental-health professionals in clinical and academic settings.
+
+To pursue this goal, we train classification models using a combination of techniques for mitigating the class-imbalance problem, reducing the predictors set to keep only the most relevant for the task, and tuning model-specific hyperparameters.
+We adopted three algorithms, Elastic Net, Random Forest, and Multilayer Perceptron, comparing multiple performance metrics and motivating the aggregation of these models into a single probability-averaging ensemble.
+
+The remainder of this work is organized as follows: Chapter 2 describes the basic concepts relevant to our methodology and related-work analysis;
+Chapter 3 reviews studies from the literature that have approached related problems;
+Chapter 4 motivates and introduces our solution to the problem in question;
+Chapter 5 explores the findings of an application of our solution;
+and, finally, Chapter 6 critically evaluates the impacts, the relevance and some improvement opportunities of the study as a whole.
