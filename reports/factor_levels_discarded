@@ -1,0 +1,46 @@
+# A tibble: 43 x 2
+   factor                         levels
+   <chr>                           <int>
+ 1 idelsa                          15105
+ 2 dietary_info_diea130i            1163
+ 3 dietary_info_diea132p             381
+ 4 dietary_info_diea134a              30
+ 5 familial_hfda18d                  708
+ 6 familial_hfda18i                  728
+ 7 familial_hfda18n                  585
+ 8 familial_hfda18s                  148
+ 9 familial_hfda18y                   46
+10 negativelifeevents_evea05a       1073
+11 negativelifeevents_evea07a        261
+12 anamnesis_hmpa31h                 617
+13 anamnesis_hmpa37a                 358
+14 anamnesis_hmpa38                 3072
+15 religion_hvsa14a                  527
+16 socio_economic_psea05a            557
+17 socio_economic_psea08a            270
+18 home_info_vifa03a                  83
+19 home_info_vifa08a                7934
+20 home_info_vifa10a                  97
+21 discrimination_disa1al            696
+22 discrimination_disa2al            209
+23 discrimination_disa3al            355
+24 discrimination_disa4al            535
+25 discrimination_disa5al            197
+26 women_mula5g                       60
+27 women_mula17m                      37
+28 women_mula20b                     144
+29 women_mula30b                     160
+30 job_related_hoca23a             10997
+31 job_related_hoca24a               323
+32 job_related_hoca25a               372
+33 job_related_hoca26              11466
+34 job_related_hoca27a               315
+35 job_related_hoca32a              1502
+36 job_related_hoca03              11987
+37 job_related_hoca14a              2968
+38 derived_A_RCPQOUTROPROBLULT12H    396
+39 metadata_ecga3                    459
+40 others_esca04                     666
+41 others_cssa6                      282
+42 others_cssa7                      262
+43 others_cssa11qou                   92

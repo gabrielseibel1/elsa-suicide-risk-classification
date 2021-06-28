@@ -1,0 +1,699 @@
+feature                        ,elsa_description
+alcohol_cala10                 ,Nos ultimos 12m 5ou+ doses em 2h  (Q10)
+alcohol_cala11                 ,Consumo de alcool com refeicoes (Q11)
+alcohol_cala2                  ,Atualmente consome bebida alcoolica (Q2)
+alcohol_cala3                  ,Quanto tempo parou consumir alcool (Q3)
+alcohol_cala4                  ,Parou consumo alcool p motivo saude (Q4)
+alcohol_cala5                  ,Parou alcool p conselho medico (Q5)
+alcohol_cala6a                 ,Tacas de vinho tinto por semana (Q6)
+alcohol_cala6b                 ,Menos de 1 taca de vinho tinto (Q6)
+alcohol_cala6c                 ,Nao toma vinho tinto ou so raramente (Q6)
+alcohol_cala7a                 ,Tacas de vinho branco por semana (Q7)
+alcohol_cala7b                 ,Menos de 1 taca de vinho branco (Q6)
+alcohol_cala7c                 ,Nao toma vinho branco ou raramente (Q6)
+alcohol_cala8a                 ,Copos peq cerveja por semana (Q8)
+alcohol_cala8b                 ,Tulipa/lata/longneck cerveja semana (Q8)
+alcohol_cala8c                 ,Garrafa 620ml cerveja por semana (Q8)
+alcohol_cala8d                 ,Menos de 1 lata/copo cerveja semana (Q8)
+alcohol_cala8e                 ,Nao toma cerveja ou raramente (Q8)
+alcohol_cala9a                 ,Doses destilados por semana (Q9)
+alcohol_cala9b                 ,Menos de 1 dose destilado p semana (Q9)
+alcohol_cala9c                 ,Nao toma destilado ou raramente (Q9)
+anamnesis_hmpa03a              ,SAH age diagnsosis (Q3)
+anamnesis_hmpa05a              ,DM age diagnosis (Q5)
+anamnesis_hmpa06               ,insuline user (Q6)
+anamnesis_hmpa07               ,insuline was first treatment (Q7)
+anamnesis_hmpa09a              ,Colestherol diagnosis (Q9)
+anamnesis_hmpa11a              ,MI age (Q11)
+anamnesis_hmpa13a              ,Angina pectoris age (Q13)
+anamnesis_hmpa15a              ,CHF age (Q15)
+anamnesis_hmpa17a              ,reumatic fever age (Q17)
+anamnesis_hmpa19a              ,chagas age (Q19)
+anamnesis_hmpa21a              ,stroke age (Q21)
+anamnesis_hmpa23a              ,kidney disease age (Q23)
+anamnesis_hmpa25a              ,trombosis age (Q25)
+anamnesis_hmpa27a              ,Asthma age(Q27)
+anamnesis_hmpa29a              ,CPOD age(Q29)
+anamnesis_hmpa31a              ,Reumatoid Arthritis (Q31)
+anamnesis_hmpa31b              ,lupus (Q31)
+anamnesis_hmpa31c              ,Reumatism (Q31)
+anamnesis_hmpa31d              ,Artrosis (Q31)
+anamnesis_hmpa31e              ,Artrite (Q31)
+anamnesis_hmpa31g              ,other joint issues (Q31)
+anamnesis_hmpa32a              ,age of diagnosis (Q32)
+anamnesis_hmpa34a              ,age Cirrosis or hepatitis (Q34)
+anamnesis_hmpa36a              ,age cancer (Q36)
+anamnesis_hmpa40               ,fatigue in mild-moderate activities (Q40)
+anamnesis_hmpa41               ,fatigue at rest or when eating (Q41)
+anamnesis_hmpa43               ,chest pain or discomfort walking (Q43)
+anamnesis_hmpa44               ,chest pain or discomfort walking fast  (Q44)
+anamnesis_hmpa46a              ,age heart surgery (Q46)
+basiclab_LABA14_CARGA          ,2h Glucose Alimentary load (mg/dL)
+basiclab_LABA14_TTG            ,Glucose 2h glucose load (mg/dL)
+basiclab_LABA21                ,free T4 (ng/dL)
+basiclab_LABA23                ,Insulina after 2h load (mcUI/mL)
+basiclab_LABA26I               ,RDW (%)
+basiclab_LABA26R_N             ,Neutrophils bast (mm3)
+basiclab_LABA26R_P             ,Neutrophils bast  (%)
+basiclab_LABA28                ,Triglycerides 2h after load (mg/dL)
+carotid_imta_lccfavg           ,Left common carotid far-wall IMT average
+carotid_imta_lccfmax           ,Left common carotid far-wall IMT maximun
+carotid_imta_lccfmin           ,Left common carotid far-wall IMT minimum
+carotid_imta_lcclumen          ,Left common carotid lumen diameter
+carotid_imta_lccvessel         ,Left common  carotid vessel diameter
+carotid_imta_rccfavg           ,Right common carotid far-wall IMT average
+carotid_imta_rccfmax           ,Right common carotid far-wall IMT maximun
+carotid_imta_rccfmin           ,Right common carotid far-wall IMT minimum
+carotid_imta_rcclumen          ,Rigth  common carotid lumen diameter
+carotid_imta_rccvessel         ,Right common  carotid vessel diameter
+cognition_fcoa11sc2            ,Escore2 memoria tardia parte2 (palavras)
+cognition_fcoa12sc             ,Escore memoria tardia parte1 (figuras)
+cognition_fcoa13sc1            ,Escore1 memoria tardia parte2 (figuras)
+cognition_fcoa13sc2            ,Escore2 memoria tardia parte2 (figuras)
+cognition_fcoa1b               ,Teste figuras
+cognition_fcoa5sc              ,Escore 1a tentativa teste figuras
+cognition_fcoa6sc              ,Escore 2a tentativa teste figuras
+cognition_fcoa7sc              ,Escore 3a tentativa teste figuras
+derived_A_ANOSDM               ,diabetes duration
+derived_A_RCPTAMUNIFORME       ,outfit size
+derived_carotid_a_imta_avgavg  ,IMTA_LCCFAVG and IMTA_RCCFAVG average
+derived_carotid_a_imta_maxavg  ,IMTA_LCCFMAX and IMTA_RCCFMAX average
+derived_carotid_a_imta_maxmax  ,IMTA_LCCFMAX and IMTA_RCCFMAX maximun
+derived_cogA_TRILHA_300SEGUNDOS,Total de segundos para execucao do teste de trilhas padronizado
+derived_cogA_TRILHA_SEGUNDOS   ,Total de segundos para execucao do teste de trilhas
+dietary_info_diea100q          ,Qtde Pudim/Mousse (Col sopa cheia)
+dietary_info_diea100s          ,Cons Sazonal Pudim/Mousse
+dietary_info_diea101q          ,Qtde Chimia/geleia (Col sopa cheia)
+dietary_info_diea101s          ,Cons Sazonal Chimia/geleia
+dietary_info_diea102q          ,Qtde Mel/melado (Col sopa cheia)
+dietary_info_diea102s          ,Cons Sazonal Mel/melado
+dietary_info_diea103q          ,Qtde Barra cereais (Un)
+dietary_info_diea103s          ,Cons Sazonal barra cereais
+dietary_info_diea104q          ,Qtde Refrigerante (Copo requeijao)
+dietary_info_diea104s          ,Cons Sazonal Refrigerante
+dietary_info_diea104t          ,Tipo Refrigerante
+dietary_info_diea105s          ,Cons Sazonal cafe
+dietary_info_diea106q          ,Qtde Suco natural (Copo requeijao)
+dietary_info_diea106s          ,Cons Sazonal suco natural
+dietary_info_diea106t          ,Tipo Suco natural
+dietary_info_diea107q          ,Qtde Suco industrial (Copo requeijao)
+dietary_info_diea107s          ,Cons Sazonal Suco industrializado
+dietary_info_diea107t          ,Tipo Suco industrializado
+dietary_info_diea108q          ,Qtde Suco artificial (Copo requeijao)
+dietary_info_diea108s          ,Cons Sazonal Suco artificial
+dietary_info_diea108t          ,Tipo Suco artificial
+dietary_info_diea109q          ,Qtde Cha/mate (Xicara de cha)
+dietary_info_diea109s          ,Cons Sazonal cha/mate
+dietary_info_diea109t          ,Tipo Cha/mate
+dietary_info_diea10q           ,Qtde Bolo simples (fatia media)
+dietary_info_diea10s           ,Cons Sazonal Bolo simples
+dietary_info_diea110q          ,Qtde Chimarrao (Garrafa termica)
+dietary_info_diea110s          ,Cons Sazonal Chimarrao
+dietary_info_diea111q          ,Qtde Cerveja (Copo americano)
+dietary_info_diea111s          ,Cons Sazonal Cerveja
+dietary_info_diea112q          ,Qtde Vinho (Taca)
+dietary_info_diea112s          ,Cons Sazonal Vinho
+dietary_info_diea112t          ,Tipo Vinho
+dietary_info_diea113q          ,Qtde Destilados (Dose)
+dietary_info_diea113s          ,Cons Sazonal Destilados
+dietary_info_diea114q          ,Qtde Agua coco (Un)
+dietary_info_diea114s          ,Cons Sazonal Agua coco
+dietary_info_diea115           ,Freq refeitorio/rest trabalho (Q115)
+dietary_info_diea116           ,Freq rest fora d horario trabalho (Q116)
+dietary_info_diea11q           ,Qtde Bolo recheado (fatia media)
+dietary_info_diea11s           ,Cons Sazonal Bolo recheado
+dietary_info_diea124a          ,Adocante liquido emb transparente (Q124)
+dietary_info_diea124b          ,Adocante liquido bem opaca (Q124)
+dietary_info_diea124c          ,Adocante po (Q124)
+dietary_info_diea124d          ,Adocante Stevia (Q124)
+dietary_info_diea124e          ,Adocante forno e fogao (Q124)
+dietary_info_diea12q           ,Qtde Bisc salgado (unidade)
+dietary_info_diea12s           ,Cons Sazonal Biscoito salgado
+dietary_info_diea130a          ,Dieta para perda de peso (Q130)
+dietary_info_diea130b          ,Dieta para reducao de colesterol (Q130)
+dietary_info_diea130c          ,Dieta para reducao de sal (Q130)
+dietary_info_diea130d          ,Dieta vegetariana/reducao carnes (Q130)
+dietary_info_diea130e          ,Dieta para ganho de peso (Q130)
+dietary_info_diea130f          ,Dieta para diabetes (Q130)
+dietary_info_diea130h          ,Dieta por outro motivo (Q130)
+dietary_info_diea132a          ,Polivitaminico (Q132)
+dietary_info_diea132b          ,Polimineral (Q132)
+dietary_info_diea132c          ,Vitamina A (Q132)
+dietary_info_diea132d          ,Vitamina B6 (Q132)
+dietary_info_diea132e          ,Vitamina C (Q132)
+dietary_info_diea132f          ,Vitamina D (Q132)
+dietary_info_diea132g          ,Vitamina E (Q132)
+dietary_info_diea132h          ,Ácido Fólico (Q132)
+dietary_info_diea132i          ,Beta Caroteno (Q132)
+dietary_info_diea132j          ,Calcio (Q132)
+dietary_info_diea132k          ,Ferro (Q132)
+dietary_info_diea132l          ,Selenio (Q132)
+dietary_info_diea132m          ,Zinco (Q132)
+dietary_info_diea132o          ,Outro suplemento (Q132)
+dietary_info_diea134           ,Tipo de cafe (Q134)
+dietary_info_diea13q           ,Qtde Biscoito doce (unidade)
+dietary_info_diea13s           ,Cons Sazonal Biscoito doce
+dietary_info_diea13t           ,Tipo Biscoito doce
+dietary_info_diea14q           ,Qtde Polenta/Angu/Pirao (Col de servir)
+dietary_info_diea14s           ,Cons Sazonal Polenta/Angu/Pirao
+dietary_info_diea15q           ,Qtde Batata inglesa/pure(Col sopa cheia)
+dietary_info_diea15s           ,Cons Sazonal Batata inglesa/pure
+dietary_info_diea16q           ,Qtde Mandioca/Banana/Bat doce coz (ped)
+dietary_info_diea16s           ,Cons Sazonal Mand/Banana/Bat doce cozida
+dietary_info_diea17q           ,Qtde Batata/Mand/Polenta fritas (Tigela)
+dietary_info_diea17s           ,Cons Sazonal Batata/Mand/Polenta fritas
+dietary_info_diea18q           ,Qtde Laranja/Tangerina (Un media)
+dietary_info_diea18s           ,Cons Sazonal Laranja/Tangerina
+dietary_info_diea19s           ,Cons Sazonal Banana
+dietary_info_diea1s            ,Cons Sazonal Arroz
+dietary_info_diea20q           ,Qtde Mamao (Unidade media)
+dietary_info_diea20s           ,Cons Sazonal Mamao
+dietary_info_diea21q           ,Qtde Maca/Pera (Unidade media)
+dietary_info_diea21s           ,Cons Sazonal Maca/Pera
+dietary_info_diea22q           ,Qtde Melancia (Fatia media)
+dietary_info_diea22s           ,Cons Sazonal Melancia
+dietary_info_diea23q           ,Qtde Melao (Fatia media)
+dietary_info_diea23s           ,Cons Sazonal Melao
+dietary_info_diea24q           ,Qtde Abacaxi (Fatia media)
+dietary_info_diea24s           ,Cons Sazonal Abacaxi
+dietary_info_diea25q           ,Qtde Abacate (Unidade media)
+dietary_info_diea25s           ,Cons Sazonal Abacate
+dietary_info_diea26q           ,Qtde Manga (Fatia media)
+dietary_info_diea26s           ,Cons Sazonal Manga
+dietary_info_diea27q           ,Qtde Uva (Unidade)
+dietary_info_diea27s           ,Cons Sazonal Uva
+dietary_info_diea28q           ,Qtde Goiaba (Unidade media)
+dietary_info_diea28s           ,Cons Sazonal Goiaba
+dietary_info_diea29q           ,Qtde Morango (Unidade)
+dietary_info_diea29s           ,Cons Sazonal Morango
+dietary_info_diea2q            ,Qtde Aveia/cereais (Col sopa cheia)
+dietary_info_diea2s            ,Cons Sazonal Aveia/Outros cereais
+dietary_info_diea30q           ,Qtde Pessego/Ameixa/Kiwi/Caju (Un media)
+dietary_info_diea30s           ,Cons Sazonal Pessego/Ameixa/Kiwi/Caju
+dietary_info_diea31q           ,Qtde Caqui/Jaca/Pinha/Conde (Un media)
+dietary_info_diea31s           ,Cons Sazonal Caqui/Jaca/Pinha/do Conde
+dietary_info_diea32q           ,Qtde Salada de frutas (Tigela)
+dietary_info_diea32s           ,Cons Sazonal Salada de frutas
+dietary_info_diea32t           ,Tipo Salada de frutas
+dietary_info_diea33s           ,Cons Sazonal Alface
+dietary_info_diea34q           ,Qtde Couve/Espinafre (Col sopa cheia)
+dietary_info_diea34s           ,Cons Sazonal Couve/Espinafre refogado
+dietary_info_diea35q           ,Qtde Repolho (Pegador cheio)
+dietary_info_diea35s           ,Cons Sazonal Repolho
+dietary_info_diea36q           ,Qtde Chicoria/Agriao/Rucula (Peg cheio)
+dietary_info_diea36s           ,Cons Sazonal Chicor/Rucula/Couve cru
+dietary_info_diea37s           ,Cons Sazonal Tomate
+dietary_info_diea38q           ,Qtde Abobora (Col sopa cheia)
+dietary_info_diea38s           ,Cons Sazonal Abobora/Moranga
+dietary_info_diea39q           ,Qtde Ab/Chuchu/Berinj (Col sopa cheia)
+dietary_info_diea39s           ,Cons Sazonal Ab Italia/Chuchu/Berinjela
+dietary_info_diea3q            ,Qtde Farofa/Cuscuz (Col sopa cheia)
+dietary_info_diea3s            ,Cons Sazonal Farofa/Cuscuz
+dietary_info_diea40q           ,Qtde Vagem (Col sopa cheia)
+dietary_info_diea40s           ,Cons Sazonal Vagem
+dietary_info_diea41q           ,Qtde Quiabo (Col sopa cheia)
+dietary_info_diea41s           ,Cons Sazonal Quiabo
+dietary_info_diea42s           ,Cons Sazonal Cebola
+dietary_info_diea43s           ,Cons Sazonal Alho
+dietary_info_diea44q           ,Qtde Cenoura (Col sopa cheia)
+dietary_info_diea44s           ,Cons Sazonal Cenoura
+dietary_info_diea45q           ,Qtde Beterraba (Rodela media)
+dietary_info_diea45s           ,Cons Sazonal Beterraba
+dietary_info_diea46q           ,Qtde Couve-flor (Ramo media)
+dietary_info_diea46s           ,Cons Sazonal Couve-flor
+dietary_info_diea47q           ,Qtde Brocolis (Ramo medio)
+dietary_info_diea47s           ,Cons Sazonal Brocolis
+dietary_info_diea48q           ,Qtde Mil verde (Col sopa cheia)
+dietary_info_diea48s           ,Cons Sazonal Mil verde
+dietary_info_diea49s           ,Cons Sazonal Feijao
+dietary_info_diea4q            ,Qtde Far mandioca/milho (Col sopa cheia)
+dietary_info_diea4s            ,Cons Sazonal Farinhas mandioca/milho
+dietary_info_diea50q           ,Qtde Feijoada/Fj tropeiro (Concha cheia)
+dietary_info_diea50s           ,Cons Sazonal Feijoada/Feijao tropeiro
+dietary_info_diea51q           ,Qtde Lent/Gr bico/Ervilha (Concha cheia)
+dietary_info_diea51s           ,Cons Sazonal Lentilha/Grao bico/Ervilha
+dietary_info_diea52q           ,Qtde Nozes/Castanha/Amendoa (Punhado)
+dietary_info_diea52s           ,Cons Sazonal Nozes/Castanha/Amendoa
+dietary_info_diea53q           ,Qtde Ovo cozido/poche (unidade)
+dietary_info_diea53s           ,Cons Sazonal Ovo cozido/poche
+dietary_info_diea54q           ,Qtde Ovo frito/omelete/mexido (unidade)
+dietary_info_diea54s           ,Cons Sazonal Ovo frito/omelte/mexido
+dietary_info_diea55q           ,Qtde Maionese (Col sopa cheia)
+dietary_info_diea55s           ,Cons Sazonal Maionese
+dietary_info_diea55t           ,Tipo Maionese
+dietary_info_diea56q           ,Qtde Leite (Copo requeijao)
+dietary_info_diea56s           ,Cons Sazonal Leite
+dietary_info_diea56t           ,Tipo Leite
+dietary_info_diea57q           ,Qtde Iogurte (Unidade media)
+dietary_info_diea57s           ,Cons Sazonal Iogurte
+dietary_info_diea57t           ,Tipo Iogurte
+dietary_info_diea58q           ,Qtde Queijos brancos (Fatia media)
+dietary_info_diea58s           ,Cons Sazonal Queijos brancos
+dietary_info_diea59q           ,Qtde Queijos Amarelos (Fatia media)
+dietary_info_diea59s           ,Cons Sazonal Queijos Amarelos
+dietary_info_diea5q            ,Qtde Pao light (fatia 25g)
+dietary_info_diea5s            ,Cons Sazonal Pao light
+dietary_info_diea60q           ,Qtde Requeijao (Col sopa cheia)
+dietary_info_diea60s           ,Cons Sazonal Requeijao
+dietary_info_diea60t           ,Tipo Requeijao
+dietary_info_diea61q           ,Qtde Margarina (Ponta faca)
+dietary_info_diea61s           ,Cons Sazonal Margarina
+dietary_info_diea62q           ,Qtde Manteiga (Ponta faca)
+dietary_info_diea62s           ,Cons Sazonal Manteiga
+dietary_info_diea63q           ,Qtde Figado/miudos (Bife medio)
+dietary_info_diea63s           ,Cons Sazonal Figado/miudos
+dietary_info_diea64q           ,Qtde Bucho/dobradinha (Concha cheia)
+dietary_info_diea64s           ,Cons Sazonal Bucho/dobradinha
+dietary_info_diea65q           ,Qtde Carne boi com osso (Pedaco medio)
+dietary_info_diea65s           ,Cons Sazonal Carne boi com osso
+dietary_info_diea66s           ,Cons Sazonal Carne boi sem osso
+dietary_info_diea67q           ,Qtde Carne porco (Pedaco medio)
+dietary_info_diea67s           ,Cons Sazonal Carne porco
+dietary_info_diea68q           ,Qtde Peito frango/aves (File medio)
+dietary_info_diea68s           ,Cons Sazonal Peito frango/aves
+dietary_info_diea69q           ,Qtde Frango frito (Pedaco medio)
+dietary_info_diea69s           ,Cons Sazonal Frango frito
+dietary_info_diea6s            ,Cons Sazonal Pao frances/forma/sirio
+dietary_info_diea70q           ,Qtde Frango cozido (Pedaco medio)
+dietary_info_diea70s           ,Cons Sazonal frango cozido
+dietary_info_diea71q           ,Qtde Linguica/Chourico/Salsichao (Un)
+dietary_info_diea71s           ,Cons Sazonal Linguica/Chourico/Salsichao
+dietary_info_diea72q           ,Qtde Hamburguer (Bife) (Un media)
+dietary_info_diea72s           ,Cons Sazonal Hamburguer (Bife)
+dietary_info_diea73q           ,Qtde Frios light (Fatia media)
+dietary_info_diea73s           ,Cons Sazonal frios light
+dietary_info_diea74q           ,Qtde Pres/Mortadela/Salame (Fatia media)
+dietary_info_diea74s           ,Cons Sazonal Pres/Mortadela/Salame/Pate
+dietary_info_diea75q           ,Qtde Bacon/Toucinho/Torresmo (Fatia)
+dietary_info_diea75s           ,Cons Sazonal Bacon/Toucinho/Torresmo
+dietary_info_diea76q           ,Qtde Peixe cozido/assado (Posta media)
+dietary_info_diea76s           ,Cons Sazonal Peixe cozido/assado
+dietary_info_diea77q           ,Qtde Peixe frito (File medio)
+dietary_info_diea77s           ,Cons Sazonal Peixe frito
+dietary_info_diea78q           ,Qtde Sardinha/atum (Lata)
+dietary_info_diea78s           ,Cons Sazonal Sardinha/atum
+dietary_info_diea79q           ,Qtde Camarao/Mariscos (Col sopa cheia)
+dietary_info_diea79s           ,Cons Sazonal Camarao/Mariscos
+dietary_info_diea7q            ,Qtde Pao doce/caseiro (un media)
+dietary_info_diea7s            ,Cons Sazonal Pao doce/caseiro
+dietary_info_diea80q           ,Qtde Caranguejo/Siri (Un)
+dietary_info_diea80s           ,Cons Sazonal Caranguejo/Siri
+dietary_info_diea81q           ,Qtde Pizza (Fatia)
+dietary_info_diea81s           ,Cons Sazonal Pizza
+dietary_info_diea82q           ,Qtde Macarrão (Escumadeira cheia)
+dietary_info_diea82s           ,Cons Sazonal Macarrão
+dietary_info_diea83q           ,Qtde Macar Instantaneo (Pacote)
+dietary_info_diea83s           ,Cons Sazonal Macarrao Instantaneo
+dietary_info_diea84q           ,Qtde Salgados assados (Un media)
+dietary_info_diea84s           ,Cons Sazonal Salgados assados
+dietary_info_diea85q           ,Qtde Salgados fritos (Un media)
+dietary_info_diea85s           ,Cons Sazonal Salgados fritos
+dietary_info_diea86q           ,Qtde Acaraje (Un media)
+dietary_info_diea86s           ,Cons Sazonal Acaraje
+dietary_info_diea87q           ,Qtde Cachorro-quente (Un media)
+dietary_info_diea87s           ,Cons Sazonal Cachorro-quente
+dietary_info_diea88q           ,Qtde Pipoca (Saco medio)
+dietary_info_diea88s           ,Cons Sazonal Pipoca
+dietary_info_diea89q           ,Qtde Estrogonofe (Colher de servir)
+dietary_info_diea89s           ,Cons Sazonal Estrogonofe
+dietary_info_diea8q            ,Qtde Pao integral/centeio (fatia 30g)
+dietary_info_diea8s            ,Cons Sazonal Pao integral/centeio
+dietary_info_diea90q           ,Qtde Comida baiana (Colher de servir)
+dietary_info_diea90s           ,Cons Sazonal Comida baiana
+dietary_info_diea90t           ,Tipo Comida baiana
+dietary_info_diea91q           ,Qtde Comida japonesa (Tigela cheia)
+dietary_info_diea91s           ,Cons Sazonal Comida japonesa
+dietary_info_diea91t           ,Tipo Comida japonesa
+dietary_info_diea92q           ,Qtde Sopa de legumes (Concha cheia)
+dietary_info_diea92s           ,Cons Sazonal Sopa de legumes
+dietary_info_diea93q           ,Qtde Sopa instantanea (Concha cheia)
+dietary_info_diea93s           ,Cons Sazonal Sopa instantanea
+dietary_info_diea94q           ,Qtde Sorvete cremoso (Bola media)
+dietary_info_diea94s           ,Cons Sazonal Sorvete cremoso
+dietary_info_diea95q           ,Qtde Picole frutas (Un)
+dietary_info_diea95s           ,Cons Sazonal Picole frutas
+dietary_info_diea96q           ,Qtde Caramelo/bala (Un)
+dietary_info_diea96s           ,Cons Sazonal Caramelo/bala
+dietary_info_diea97q           ,Qtde Gelatina (Tigela)
+dietary_info_diea97s           ,Cons Sazonal Gelatina
+dietary_info_diea98q           ,Qtde Chocolate po (Col sobremesa)
+dietary_info_diea98s           ,Cons Sazonal Chocolate po
+dietary_info_diea99q           ,Qtde Chocolate/bombom/docinho (20g)
+dietary_info_diea99s           ,Cons Sazonal Chocolate/bombom/docinho
+dietary_info_diea9q            ,Qtde Pao de queijo (un media)
+dietary_info_diea9s            ,Cons Sazonal Pao de queijo
+discrimination_disa1aa         ,Discr trab: cor ou raca (Q1a)
+discrimination_disa1ab         ,Discr trab: ser homem ou mulher (Q1a)
+discrimination_disa1ac         ,Discr trab: religiao ou culto (Q1a)
+discrimination_disa1ad         ,Discr trab: doenca/defic fisica (Q1a)
+discrimination_disa1ae         ,Discr trab: orientacao/pref sexual (Q1a)
+discrimination_disa1af         ,Discr trab: econom/instrucao/funcao(Q1a)
+discrimination_disa1ag         ,Discr trab: ativ politica (Q1a)
+discrimination_disa1ah         ,Discr trab: idade (Q1a)
+discrimination_disa1ai         ,Discr trab: aparencia fisica (Q1a)
+discrimination_disa1ak         ,Discr trab: outra razao (Q1a)
+discrimination_disa1b          ,Qdo ult x discriminado no trabalho (Q1b)
+discrimination_disa2aa         ,Discr moradia: cor ou raca (Q2a)
+discrimination_disa2ab         ,Discr moradia: ser homem ou mulher (Q2a)
+discrimination_disa2ac         ,Discr moradia: religiao ou culto (Q2a)
+discrimination_disa2ad         ,Discr moradia: doenca/defic fisica (Q2a)
+discrimination_disa2ae         ,Discr moradia: orientacao sexual (Q2a)
+discrimination_disa2af         ,Discr moradia:econ/instrucao/funcao(Q2a)
+discrimination_disa2ag         ,Discr moradia: ativ politica (Q2a)
+discrimination_disa2ah         ,Discr moradia: idade (Q2a)
+discrimination_disa2ai         ,Discr moradia: aparencia fisica (Q2a)
+discrimination_disa2ak         ,Discr moradia: outra razao (Q2a)
+discrimination_disa2b          ,Qdo ult x discriminado moradia (Q2b)
+discrimination_disa3aa         ,Discr policia: cor ou raca (Q3a)
+discrimination_disa3ab         ,Discr policia: ser homem ou mulher (Q3a)
+discrimination_disa3ac         ,Discr policia: religiao ou culto (Q3a)
+discrimination_disa3ad         ,Discr policia: doenca/defic fisica (Q3a)
+discrimination_disa3ae         ,Discr policia: orientacao sexual (Q3a)
+discrimination_disa3af         ,Discr policia:econ/instrucao/funcao(Q3a)
+discrimination_disa3ag         ,Discr policia: ativ politica (Q3a)
+discrimination_disa3ah         ,Discr policia: idade (Q3a)
+discrimination_disa3ai         ,Discr policia: aparencia fisica (Q3a)
+discrimination_disa3ak         ,Discr policia: outra razao (Q2a)
+discrimination_disa3b          ,Qdo ult x discriminado policia (Q2b)
+discrimination_disa4aa         ,Discr publico: cor ou raca (Q4a)
+discrimination_disa4ab         ,Discr publico: ser homem ou mulher (Q4a)
+discrimination_disa4ac         ,Discr publico: religiao ou culto (Q4a)
+discrimination_disa4ad         ,Discr publico: doenca/defic fisica (Q4a)
+discrimination_disa4ae         ,Discr publ: orientacao/pref sexual (Q4a)
+discrimination_disa4af         ,Discr publico:econ/instrucao/funcao(Q4a)
+discrimination_disa4ag         ,Discr publico: ativ politica (Q4a)
+discrimination_disa4ah         ,Discr publico: idade (Q4a)
+discrimination_disa4ai         ,Discr publico: aparencia fisica (Q4a)
+discrimination_disa4ak         ,Discr publico: outra razao (Q4a)
+discrimination_disa4b          ,Qdo ult x discriminado publico (Q4b)
+discrimination_disa5aa         ,Discr escola: cor ou raca (Q5a)
+discrimination_disa5ab         ,Discr escola: ser homem ou mulher (Q5a)
+discrimination_disa5ac         ,Discr escola: religiao ou culto (Q5a)
+discrimination_disa5ad         ,Discr escola: doenca/defic fisica (Q5a)
+discrimination_disa5ae         ,Discr escola: orientacao sexual (Q5a)
+discrimination_disa5af         ,Discr escola:econ/instrucao/funcao(Q5a)
+discrimination_disa5ag         ,Discr escola: ativ politica (Q5a)
+discrimination_disa5ah         ,Discr escola: idade (Q5a)
+discrimination_disa5ai         ,Discr escola: aparencia fisica (Q5a)
+discrimination_disa5ak         ,Discr escola: outra razao (Q5a)
+discrimination_disa5b          ,Qdo ult x discriminado escola (Q5b)
+EKG_a_vfccl_areahf_pe          ,HF ms2 VFCPE
+EKG_a_vfccl_arealf_pe          ,LF ms2 VFCPE
+EKG_a_vfccl_areavlf_pe         ,VLF  VFCPE
+EKG_a_vfccl_bpmmax_pe          ,maximum HR (bpm) VFCPE
+EKG_a_vfccl_bpmmed_pe          ,medium HR (bpm) VFCPE
+EKG_a_vfccl_bpmmin_pe          ,minimum HR (bpm) VFCPE
+EKG_a_vfccl_hfp_pe             ,HF nu VFCPE
+EKG_a_vfccl_lfhf_pe            ,LF/HF VFCPE
+EKG_a_vfccl_lfp_pe             ,LF nu VFCPE
+EKG_a_vfccl_pnn_pe             ,pNN50 VFCPE
+EKG_a_vfccl_rmssd_pe           ,RMSSD VF
+EKG_a_vfccl_rrdv_pe            ,RR SD (ms) VFCPE
+EKG_a_vfccl_rrmed_pe           ,mean RR (ms) VFCPE
+EKG_a_vfccl_rrvar_pe           ,RR variance (ms2) VFCPE
+EKG_a_vfccl_triangindex_pe     ,Triangular Index VFCPE
+eye_reta10                     ,lazy eye
+eye_reta11                     ,have seen ophtalmologist
+familial_hfda02a               ,Pai morreu subitamente (Q2)
+familial_hfda02b               ,Idade que o pai morreu subitamente (Q2)
+familial_hfda02d               ,Mae morreu subitamente (Q2)
+familial_hfda02e               ,Idade que a mae morreu subitamente (Q2)
+familial_hfda02g               ,Irma/o morreu subitamente (Q2)
+familial_hfda02h               ,Idade que irma/o morreu subitamente (Q2)
+familial_hfda04a               ,Pai teve infarto do miocardio (Q4)
+familial_hfda04b               ,Idade que pai teve infarto (Q4)
+familial_hfda04d               ,Mae teve infarto do miocardio (Q4)
+familial_hfda04e               ,Idade que mae teve infarto (Q4)             )
+familial_hfda04g               ,Irma/o teve infarto do miocardio (Q4)
+familial_hfda04h               ,Idade que irma/o teve infarto (Q4)
+familial_hfda06a               ,Pai teve AVC (Q6)
+familial_hfda06b               ,Idade que pai teve AVC (Q6)
+familial_hfda06d               ,Mae teve AVC (Q6)
+familial_hfda06e               ,Idade que mae teve AVC (Q6)
+familial_hfda06g               ,Irma/o teve AVC (Q6)
+familial_hfda06h               ,Idade que irma/o teve AVC (Q6)
+familial_hfda08a               ,Pai teve hipertensao (Q8)
+familial_hfda08b               ,Idade que pai teve diagnostico HT (Q8)
+familial_hfda08d               ,Mae teve hipertensao (Q8)
+familial_hfda08e               ,Idade que mae teve diagnostico HT (Q8)
+familial_hfda08g               ,Irma/o teve hipertensao (Q8)
+familial_hfda08h               ,Idade que irma/o teve diag HT (Q8)
+familial_hfda10a               ,Pai teve outra doenca do coracao (Q10)
+familial_hfda10b               ,Idade pai teve doenca do coracao (Q10)
+familial_hfda10d               ,Mae teve outra doenca do coracao (Q10)
+familial_hfda10e               ,Idade mae teve doenca do coracao (Q10)
+familial_hfda10g               ,Irma/o teve outra doenca coracao (Q10)
+familial_hfda10h               ,Idade irma/o teve doenca coracao (Q10)
+familial_hfda12a               ,Pai teve diagnostico de diabetes (Q12)
+familial_hfda12b               ,Idade que pai teve diagnostico DM (Q12)
+familial_hfda12d               ,Mae teve diagnostico de diabetes (Q12)
+familial_hfda12e               ,Idade que mae teve diagnostico DM (Q12)
+familial_hfda12g               ,Irma/o teve diagnostico de diabetes (Q12)
+familial_hfda12h               ,Idade irma/o teve diagnostico DM (Q12)
+familial_hfda14a               ,Pai teve diagnostico de asma (Q14)
+familial_hfda14b               ,Idade pai teve diagnostico asma (Q14)
+familial_hfda14d               ,Mae teve diagnostico de asma (Q14)
+familial_hfda14e               ,Idade mae teve diagnostico asma (Q14)
+familial_hfda14g               ,Irma/o teve diagnostico de asma (Q12)
+familial_hfda14h               ,Idade irma/o teve diagnostico asma (Q14)
+familial_hfda16a               ,Pai submetido Safena/Angio/Stent (Q16)
+familial_hfda16b               ,Idade pai  Safena/Angio/Stent (Q16)
+familial_hfda16d               ,Mae submetida Safena/Angio/Stent (Q16)
+familial_hfda16e               ,Idade mae  Safena/Angio/Stent (Q16)
+familial_hfda16g               ,Irmao submetido Safena/Angio/Stent (Q16)
+familial_hfda16h               ,Idade irma/o  Safena/Angio/Stent (Q16)
+familial_hfda18a               ,Pai teve diagnostico de cancer (Q18)
+familial_hfda18b               ,Idade pai teve diagnostico cancer (Q18)
+familial_hfda18f               ,Mae teve diagnostico de cancer (Q18)
+familial_hfda18g               ,Idade mae teve diagnostico cancer (Q18)
+familial_hfda18k               ,Irma/o 1  teve diagnostico de cancer (Q18)
+familial_hfda18l               ,Idade irma/o 1 teve cancer (Q18)
+familial_hfda18p               ,Irma/o 2  teve diagnostico de cancer (Q18)
+familial_hfda18q               ,Idade irma/o 2 teve cancer (Q18)
+familial_hfda18u               ,Irma/o 3  teve diagnostico de cancer (Q18)
+familial_hfda18v               ,Idade irma/o 3 teve cancer (Q18)
+headache_cefa10                ,Som incomoda dor ultimos 12m (Q10)
+headache_cefa11                ,Alimentacao dor cabeca ultimos 12m (Q11)
+headache_cefa2                 ,Freq dor de cabeca nos ultimos 12m (Q2)
+headache_cefa3                 ,Duracao dor de cabeca ultimos 12m (Q3)
+headache_cefa4                 ,Antes problema visao/sensib/forca (Q4)
+headache_cefa5                 ,Tipo dor de cabeca ultimos 12 m (Q5)
+headache_cefa6                 ,Parte da cabeca tem dor ultimos 12m (Q6)
+headache_cefa7                 ,Intensidade dor cabeca ultimos 12m (Q7)
+headache_cefa8                 ,Dor cabeca ao exercicio ultimos 12m (Q8)
+headache_cefa9                 ,Luz incomoda dor cabeca ultimos 12m (Q9)
+home_info_vifa02               ,Quantos anos casado (Q2)
+home_info_vifa03               ,Situacao conjugal atual (Q3)
+home_info_vifa04               ,Parceiro estavel sem viver junto (Q5)
+home_info_vifa05a              ,Idade do conjuge/parceiro (Q4)
+home_info_vifa06               ,Cor/raca do conjuge/parceiro (Q6)
+home_info_vifa07               ,Grau instrucao do conjuge/parceiro (Q7)
+home_info_vifa09               ,Situacao ocupacao conjuge/parceiro (Q9)
+home_info_vifa12               ,Quantos filhos (Q12)
+home_info_vifa13a              ,Mes nascimento do filho (Q13)
+home_info_vifa13b              ,Ano nascimento do filho (Q13)
+home_info_vifa14a              ,Mes nascimento filho + velho (Q14)
+home_info_vifa14b              ,Ano nascimento filho + velho (Q14)
+home_info_vifa15a              ,Mes nascimento filho + novo (Q15)
+home_info_vifa15b              ,Ano nascimento filho + novo (Q15)
+home_info_vifa17a              ,Parentesco/relacao morador1 (Q17)
+home_info_vifa17b              ,Idade morador1 (Q17)
+home_info_vifa17d              ,Sexo morador1 (Q17)
+home_info_vifa18a              ,Parentesco/relacao morador2 (Q18)
+home_info_vifa18b              ,Idade morador2 (Q18)
+home_info_vifa18d              ,Sexo morador2 (Q18)
+home_info_vifa19a              ,Parentesco/relacao morador3 (Q19)
+home_info_vifa19b              ,Idade morador3 (Q19)
+home_info_vifa19d              ,Sexo morador3 (Q19)
+home_info_vifa20a              ,Parentesco/relacao morador4 (Q20)
+home_info_vifa20b              ,Idade morador4 (Q20)
+home_info_vifa20d              ,Sexo morador4 (Q20)
+home_info_vifa21a              ,Parentesco/relacao morador5 (Q21)
+home_info_vifa21b              ,Idade morador5 (Q21)
+home_info_vifa21d              ,Sexo morador5 (Q21)
+home_info_vifa22a              ,Parentesco/relacao morador6 (Q22)
+home_info_vifa22b              ,Idade morador6 (Q22)
+home_info_vifa22d              ,Sexo morador6 (Q22)
+home_info_vifa23a              ,Parentesco/relacao morador7 (Q23)
+home_info_vifa23b              ,Idade morador7 (Q23)
+home_info_vifa23d              ,Sexo morador7 (Q23)
+home_info_vifa24a              ,Parentesco/relacao morador8 (Q24)
+home_info_vifa24b              ,Idade morador8 (Q24)
+home_info_vifa24d              ,Sexo morador8 (Q24)
+home_info_vifa25a              ,Parentesco/relacao morador9 (Q25)
+home_info_vifa25b              ,Idade morador9 (Q25)
+home_info_vifa25d              ,Sexo morador9 (Q25)
+home_info_vifa26a              ,Parentesco/relacao morador10 (Q26)
+home_info_vifa26b              ,Idade morador10 (Q26)
+home_info_vifa26d              ,Sexo morador10 (Q26)
+job_related_hoca02a            ,Ano comecou trabralhar na instituicao (Q2)
+job_related_hoca04a            ,Quantos anos nessas atividades (Q4)
+job_related_hoca05             ,Supervisiona alguem (Q5)
+job_related_hoca06a            ,Quantas pessoas supervisiona (Q6)
+job_related_hoca07             ,Alguem o supervisiona (Q7)
+job_related_hoca08             ,Participa de decisoes sobre recursos (Q8)
+job_related_hoca09             ,Cargo de chefia ou coordenacao (Q9)
+job_related_hoca10a            ,Quantos anos chefia ou coordenacao (Q10)
+job_related_hoca11a            ,Ano em que se aposentou (Q11)
+job_related_hoca12             ,Motivo da aposentadoria (Q12)
+job_related_hoca13a            ,Ano comecou trabralhar instituicao (Q13)
+job_related_hoca15a            ,Quantos anos essas atividades (Q15)
+job_related_hoca16             ,Esta trabalhando (aposentado) (Q16)
+job_related_hoca17             ,Onde trabalha (Q17)
+job_related_hoca18             ,Trabalho remunerado (Q18)
+job_related_hoca19a            ,Anos trabalhando pos-aposentadoria (Q19)
+job_related_hoca29             ,Regime de plantao na instituicao (Q9)
+job_related_hoca30a            ,Qtos anos regime de plantao (Q10)
+job_related_hoca31             ,Turno mais freq regime de plantao (Q11)
+job_related_hoca32             ,Esquema mais freq regime plantao (Q12)
+job_related_hoca34             ,Tarefas com rapidez (Q14)
+job_related_hoca35             ,Trabalhar intensamente (Q15)
+job_related_hoca36             ,Trabalho exige demais (Q16)
+job_related_hoca37             ,Tempo suficiente cumprir tarefas (Q17)
+job_related_hoca38             ,Exigencias contraditorias (Q18)
+job_related_hoca39             ,Aprender coisas novas no trabalho (Q19)
+job_related_hoca40             ,Exige muita habilidade/con especial(Q20)
+job_related_hoca41             ,Exige iniciativas (Q21)
+job_related_hoca42             ,Repetir muitas x mesmas tarefas (Q22)
+job_related_hoca43             ,Pode escolher como fazer (Q23)
+job_related_hoca44             ,Pode escolher o que fazer (Q24)
+job_related_hoca45             ,Ambiente calmo e agradavel (Q25)
+job_related_hoca46             ,Pessoas se relacionam bem (Q26)
+job_related_hoca47             ,Contar com apoio dos colegas (Q27)
+job_related_hoca48             ,Se dia ruim colegas compreendem (Q28)
+job_related_hoca49             ,Relaciona bem com seus chefes (Q29)
+job_related_hoca50             ,Gosta trabalhar com seus colegas (Q30)
+job_related_hoca51             ,Contatado fora do trabalho ult 12m (Q31)
+job_related_hoca52             ,Impede tempo desejado com familia (Q32)
+job_related_hoca53             ,Dificulta cumprir resp domesticas (Q33)
+job_related_hoca54             ,Familia interfere resp profissional (Q34)
+job_related_hoca55             ,Familia/trab impedem tempo proprio (Q35)
+mentalvar_only_persistent      ,persistent MDD
+negativelifeevents_evea02      ,Assalto 1x: quando (Q2)
+negativelifeevents_evea03      ,Assalto +1x: quando ultima (Q3)
+negativelifeevents_evea06      ,Hospitalizado 1x: quando (Q6)
+negativelifeevents_evea08      ,Hospitalizado +1x: quando ultima (Q8)
+negativelifeevents_evea10      ,Faleceu 1 parente: quando (Q10)
+negativelifeevents_evea11      ,Faleceu +1 parente: quando ultimo (Q11)
+negativelifeevents_evea13      ,Dificuldade financeira 1x: quando (Q13)
+negativelifeevents_evea14      ,Dif financeira +1x: quando ultima (Q14)
+negativelifeevents_evea16      ,Rompimento amor 1x: quando (Q16)
+negativelifeevents_evea17      ,Rompimento amor +1x: quando (Q17)
+others_cbaa2a                  ,Idade que fez cirurgia bariatrica (Q2)
+others_claa3                   ,Dor comeca parado em pe/senatado (Q3)
+others_claa4                   ,Dor ao subir ou andar rapido (Q4)
+others_claa5                   ,Dor ao andar ritmo normal no plano (Q5)
+others_claa6                   ,Dor ao parar de andar (Q6)
+others_claa7a                  ,Onde dor: F1 (coxa) (Q7)
+others_claa7b                  ,Onde dor: D1 (nadega) (Q7)
+others_claa7c                  ,Onde dor: D2 (coxa) (Q7)
+others_claa7d                  ,Onde dor: D3 (panturrilha) (Q7)
+others_claa7e                  ,Onde dor: outra localizacao (Q7)
+others_cssa10                  ,Vomitou ingestao sobrecarga
+others_cssa11                  ,Outra intercorrencia na sobrecarga
+others_cssa8                   ,Administracao incompleta da sobrecarga
+others_cssa9                   ,Mal estar/nausea ingestao da sobrecarga
+others_pcoa2                   ,Qual seu peso ao nascer (Q2)
+others_pcoa3                   ,?
+others_pcoa4                   ,Pode obter informacao peso ao nascer(Q4)
+others_vifa28a                 ,Qtos doentes/deficientes cuida (Q2)
+physical_activity_afia10a      ,Caminha p locomocao (minutos/dia) (Q10)
+physical_activity_afia2a       ,Caminhada (minutos por dia) (Q2)
+physical_activity_afia4a       ,Ativ fis fortes (minutos por dia) (Q4)
+physical_activity_afia6a       ,Ativ fis medias (minutos por dia) (Q6)
+physical_activity_afia8a       ,Pedala p locomocao (minutos/dia) (Q8)
+religion_hvsa12                ,Frequencia atividade religiosa (Q12)
+religion_hvsa14                ,Qual religiao (Q14)
+smoking_hvsa02a                ,Idadecomecou fumar (Q2)
+smoking_hvsa03                 ,Fuma atualmente (Q3)
+smoking_hvsa04a                ,Idade parou fumar ultima vez (Q4)
+smoking_hvsa05a                ,Cigarros por dia (Q5)
+smoking_hvsa06a                ,Anos de fumo (Q6)
+smoking_hvsa08                 ,Concive com fumantes em casa (Q8)
+smoking_hvsa09                 ,Convive com fumantes no trabalho (Q9)
+smoking_hvsa10                 ,Convive com fumantes no automovel (Q10)
+social_support_capa12          ,Quem toca istrumento musical (Q12)
+social_support_capa14          ,Quem le livros de literatura (Q14)
+social_support_capa18          ,Quem le revistas profissionais (Q18)
+social_support_capa2           ,Quem conserta carro/bicicleta (Q2)
+social_support_capa20          ,Quem ativista de partido politico (Q20)
+social_support_capa22          ,Quem tem + de R$2000 na poup/invest (Q22)
+social_support_capa24          ,Quem Prefeitura/governo Estado (Q24)
+social_support_capa28          ,Quem tem casa de campo/praia (Q28)
+social_support_capa30          ,Quem contrata pessoas (Q30)
+social_support_capa32          ,Quem conhece bastante leis (Q32)
+social_support_capa34          ,Quem tem contatos com a midia (Q34)
+social_support_capa36          ,Quem conhece assuntos financeiros (Q35)
+social_support_capa38          ,Quem arranja emprego para familiar (Q38)
+social_support_capa40          ,Quem aconselha conflitos trabalho (Q40)
+social_support_capa48          ,Quem empresta R$ se precisar (Q48)
+social_support_capa54          ,Quem  discute sobre eleicoes (Q54)
+social_support_capa6           ,Quem conserta equip domesticos (Q6)
+social_support_capa62          ,Quem facilita hospitalizacao/exame (Q62)
+social_support_capa8           ,Quem fala lingua estrangeira (Q8)
+socio_economic_hmpa54          ,Cobertura plano de saude privado (Q54)
+socio_economic_psea02          ,Ultima serie (Q2)
+socio_economic_psea03a         ,Idade terminou 2° grau (Q3)
+socio_economic_psea07a         ,Quantas domestesticas mensalistas (Q6)
+sociodem_vifa36a               ,number of twin brother/sister (Q10)
+sociodem_vifa37                ,identical twins (Q11)
+us_liverusg_abdwal_qual        ,Abd_wall_image_ quality
+us_liverusg_liver_qual         ,Liver_image_quality
+us_liverusg_wall_maxsubcut     ,Maximum  subcutaneous fat layer (cm)
+us_liverusg_wall_minsubcut     ,Minimum subcutaneous fat layer (cm)
+us_liverusg_wall_preperit      ,Preperitoneal fat (cm)
+women_mula1                    ,Idade q menstruou pela primeira vez (Q1)
+women_mula10a                  ,N total de gestacoes (Q10)
+women_mula11                   ,Pre-eclampsia/eclampsia (Q11)
+women_mula12                   ,Ganho de peso maior que 30kg (Q12)
+women_mula13a                  ,Em qtas gestacacoes +30Kg (Q13)
+women_mula14                   ,Tentou e nao conseguiu engravidar (Q14)
+women_mula15                   ,Sindrome de ovarios policisticos (Q15)
+women_mula16                   ,Usa contraceptivo atualmente (Q16)
+women_mula17a                  ,Usa pilula (Q17)
+women_mula17b                  ,Usa injecoes contraceptivas (Q17)
+women_mula17c                  ,Usa implante hormonal (Q17)
+women_mula17d                  ,Usa anel (hormonal intravaginal) (Q17)
+women_mula17e                  ,Usa DIU com hormonio (Q17)
+women_mula17f                  ,Usa DIU sem hormonio (Q17)
+women_mula17g                  ,Usa DIU nao especificado (Q17)
+women_mula17h                  ,Usa camisinha masculina (Q17)
+women_mula17i                  ,Ligadura/laqueadura de trompas (Q17)
+women_mula17j                  ,Vasectomia (Q17)
+women_mula17l                  ,Outro contraceptivo (Q17)
+women_mula18a                  ,Idade comecou contraceptivo atual (Q18)
+women_mula19a                  ,Qtos anos usa contraceptivo atual (Q19)
+women_mula2                    ,Ainda menstrua (Q2)
+women_mula20                   ,Metodo hormonal atual (Q20)
+women_mula20a                  ,Outro metodo hormonal atual (Q20)
+women_mula21                   ,Ja usou anticoncepcional hormonal (Q21)
+women_mula22a                  ,Ja usou pilula (Q21)
+women_mula22b                  ,Ja usou injecoes contraceptivas (Q21)
+women_mula22c                  ,Ja usou implante hormonal (Q21)
+women_mula22d                  ,Ja usou anel (hormonal intravaginal) (Q21)
+women_mula22e                  ,Ja usou DIU com hormonio (Q21)
+women_mula22g                  ,?
+women_mula23a                  ,Idade comecou 1o anticoncepcional (Q23)
+women_mula24a                  ,Qtos anos usou 1o anticoncepcional (Q24)
+women_mula25a                  ,Qtos anos parou ult concep hormonal(Q25)
+women_mula26                   ,Hormonios menopausa osteoposore etc(Q26)
+women_mula27a                  ,Idade comecou hormonios p menopausa(Q27)
+women_mula28                   ,Usa hormonios menopausa osteoposore(Q28)
+women_mula29a                  ,Qtos anos parou hormonios menopausa(Q29)
+women_mula3                    ,Ha qto tempo parou de menstruar (Q3)
+women_mula30                   ,Hormonio q usa atualmente (Q30)
+women_mula30a                  ,Qual outro hormonio usa (30a)
+women_mula31a                  ,Qtos anos usa/usou hormonio fem (Q31)
+women_mula4a                   ,Idade parou menstruar definitivamente(Q4)
+women_mula5a                   ,Menopausa natural (Q5)
+women_mula5b                   ,Histerectomia (Q5)
+women_mula5c                   ,Retirou 2 ovarios (Q5)
+women_mula5d                   ,Parou de menstruar com outro tto (Q5)
+women_mula5f                   ,Parou de menstruar por outra razao (Q5)
+women_mula6                    ,Qto tempo menstruada (Q6)
+women_mula7                    ,Ja engravidou (Q7)
+women_mula8a                   ,Idade engravidou pela primeira vez (Q8)
+women_mula9a                   ,Qtos nascidos-vivos (Q9)
+women_mula9b                   ,Qtos nascidos-mortos (Q9)
+women_mula9c                   ,Qtos abortos (Q9)
+women_mula9d                   ,Outras (gravidez tubaria etc) (Q9)

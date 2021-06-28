@@ -1,0 +1,52 @@
+feature                      ,label
+bp_derivedA_RAZAOPAS         ,Ankle brachial index
+cisab5                       ,NA
+cisae7                       ,NA
+cisag1                       ,NA
+cisag2                       ,NA
+cisag4                       ,NA
+cisag5                       ,NA
+cisag6                       ,NA
+cisag7                       ,NA
+cisah1                       ,NA
+cisah2                       ,NA
+cisah3a                      ,NA
+cisah3b                      ,NA
+cisah3c                      ,NA
+cisah4                       ,NA
+cisah5                       ,NA
+cisai8                       ,NA
+cisaj8                       ,NA
+cisan1                       ,NA
+cisao1                       ,NA
+cisao1a                      ,NA
+derived_A_FRAMINGHAM_CHD_LDL ,Framingham - LDL
+derived_A_GLOBAL_RISK        ,Global risk score
+derived_A_RCPCIRVARIZESULT30D,self-reported varicose vein surgery last 30d
+derived_A_VIFA30_PMCAT       ,familial income - strata
+derived_cogA_FLUENCIA_LETRAF ,Escore de palavras corretas com a letra F
+derived_nle                  ,any negative life event
+derived_usga1                ,Carotida - EMI
+EKG_a_ecgmc_bcrd_hae         ,Complete right bundle block +  left hemibloqueio anterior
+EKG_a_ecgmc_esv              ,extrasystole ventriculares
+EKG_a_ecgmc_fluttera         ,Flutter atrial
+EKG_a_ecgmc_hve_stt          ,Hipertrofia ventricular left with  ST-T alterations
+EKG_a_ecgmc_im               ,Myocardial Infarction
+EKG_a_ecgmc_mp               ,Artificial pacemaker
+EKG_a_ecgmc_qmenor_stt       ,lower Q with ST-T alterations
+EKG_a_ecgmc_qualquer_ex_vent ,any extrasystole
+EKG_a_ecgmc_rvd              ,high R waves right ventricle
+EKG_a_ecgmc_ts               ,Taquicardia sinus
+EKG_a_vfccl_triangindex_dt   ,Triangular Index VFCDT
+home_info_vifa11             ,Filhos (Q11)
+meds_atenolol                ,?
+mentalvar__TAG               ,GAD
+mentalvar__TOC               ,OCD
+mentalvar_A_SINTDEP          ,depression symptoms
+mentalvar_A_SINTMEMORIA      ,concentration symptoms
+metadata_ecga2               ,Valor de V4 (cm)
+negativelifeevents_evea12    ,Dif financeira grave ultimos 12 m (Q12)
+neighborhood_viza06          ,Condicoes atividade fisica (Q6)
+others_cssa3                 ,Usa aspirina/outro para anti-coagulacao
+others_esca03                ,Relativo trabalho (Q3)
+social_support_capa57        ,Cuidar das criancas se estiver fora (Q57)

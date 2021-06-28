@@ -1,0 +1,339 @@
+
+ Combination row 11 and column 14 is above the cut-off, value = 0.955 
+ 	 Flagging column 14 
+ Combination row 19 and column 20 is above the cut-off, value = 0.931 
+ 	 Flagging column 20 
+ Combination row 38 and column 39 is above the cut-off, value = 1 
+ 	 Flagging column 38 
+ Combination row 52 and column 53 is above the cut-off, value = 1 
+ 	 Flagging column 52 
+ Combination row 64 and column 66 is above the cut-off, value = 0.945 
+ 	 Flagging column 64 
+ Combination row 67 and column 69 is above the cut-off, value = 0.924 
+ 	 Flagging column 67 
+ Combination row 70 and column 71 is above the cut-off, value = 0.92 
+ 	 Flagging column 71 
+ Combination row 72 and column 73 is above the cut-off, value = 0.924 
+ 	 Flagging column 73 
+ Combination row 68 and column 74 is above the cut-off, value = -0.914 
+ 	 Flagging column 74 
+ Combination row 68 and column 78 is above the cut-off, value = 0.996 
+ 	 Flagging column 78 
+ Combination row 74 and column 78 is above the cut-off, value = -0.914 
+ 	 Flagging column 78 
+ Combination row 67 and column 79 is above the cut-off, value = 0.924 
+ 	 Flagging column 67 
+ Combination row 69 and column 79 is above the cut-off, value = 0.999 
+ 	 Flagging column 79 
+ Combination row 81 and column 83 is above the cut-off, value = 0.935 
+ 	 Flagging column 81 
+ Combination row 83 and column 84 is above the cut-off, value = -0.963 
+ 	 Flagging column 83 
+ Combination row 85 and column 86 is above the cut-off, value = 0.962 
+ 	 Flagging column 86 
+ Combination row 87 and column 88 is above the cut-off, value = 0.941 
+ 	 Flagging column 88 
+ Combination row 93 and column 94 is above the cut-off, value = -0.913 
+ 	 Flagging column 94 
+ Combination row 244 and column 245 is above the cut-off, value = 0.942 
+ 	 Flagging column 245 
+ Combination row 244 and column 246 is above the cut-off, value = 0.929 
+ 	 Flagging column 244 
+ Combination row 245 and column 246 is above the cut-off, value = 0.942 
+ 	 Flagging column 245 
+ Combination row 244 and column 247 is above the cut-off, value = 0.901 
+ 	 Flagging column 244 
+ Combination row 245 and column 247 is above the cut-off, value = 0.902 
+ 	 Flagging column 245 
+ Combination row 245 and column 248 is above the cut-off, value = 0.9 
+ 	 Flagging column 245 
+ Combination row 247 and column 248 is above the cut-off, value = 0.936 
+ 	 Flagging column 248 
+ Combination row 246 and column 249 is above the cut-off, value = 0.901 
+ 	 Flagging column 246 
+ Combination row 247 and column 249 is above the cut-off, value = 0.93 
+ 	 Flagging column 249 
+ Combination row 248 and column 249 is above the cut-off, value = 0.94 
+ 	 Flagging column 248 
+ Combination row 250 and column 251 is above the cut-off, value = 0.942 
+ 	 Flagging column 251 
+ Combination row 250 and column 252 is above the cut-off, value = 0.932 
+ 	 Flagging column 252 
+ Combination row 251 and column 252 is above the cut-off, value = 0.945 
+ 	 Flagging column 251 
+ Combination row 253 and column 254 is above the cut-off, value = 0.917 
+ 	 Flagging column 254 
+ Combination row 253 and column 255 is above the cut-off, value = 0.909 
+ 	 Flagging column 255 
+ Combination row 254 and column 255 is above the cut-off, value = 0.927 
+ 	 Flagging column 255 
+ Combination row 256 and column 257 is above the cut-off, value = 0.932 
+ 	 Flagging column 257 
+ Combination row 256 and column 258 is above the cut-off, value = 0.916 
+ 	 Flagging column 256 
+ Combination row 257 and column 258 is above the cut-off, value = 0.926 
+ 	 Flagging column 257 
+ Combination row 250 and column 259 is above the cut-off, value = 0.997 
+ 	 Flagging column 250 
+ Combination row 251 and column 259 is above the cut-off, value = 0.94 
+ 	 Flagging column 251 
+ Combination row 252 and column 259 is above the cut-off, value = 0.929 
+ 	 Flagging column 252 
+ Combination row 250 and column 260 is above the cut-off, value = 0.939 
+ 	 Flagging column 260 
+ Combination row 251 and column 260 is above the cut-off, value = 0.997 
+ 	 Flagging column 251 
+ Combination row 252 and column 260 is above the cut-off, value = 0.943 
+ 	 Flagging column 252 
+ Combination row 259 and column 260 is above the cut-off, value = 0.942 
+ 	 Flagging column 260 
+ Combination row 250 and column 261 is above the cut-off, value = 0.929 
+ 	 Flagging column 261 
+ Combination row 251 and column 261 is above the cut-off, value = 0.943 
+ 	 Flagging column 251 
+ Combination row 252 and column 261 is above the cut-off, value = 0.997 
+ 	 Flagging column 252 
+ Combination row 259 and column 261 is above the cut-off, value = 0.932 
+ 	 Flagging column 261 
+ Combination row 260 and column 261 is above the cut-off, value = 0.945 
+ 	 Flagging column 260 
+ Combination row 253 and column 262 is above the cut-off, value = 0.991 
+ 	 Flagging column 262 
+ Combination row 254 and column 262 is above the cut-off, value = 0.909 
+ 	 Flagging column 254 
+ Combination row 255 and column 262 is above the cut-off, value = 0.902 
+ 	 Flagging column 255 
+ Combination row 253 and column 263 is above the cut-off, value = 0.908 
+ 	 Flagging column 263 
+ Combination row 254 and column 263 is above the cut-off, value = 0.992 
+ 	 Flagging column 263 
+ Combination row 255 and column 263 is above the cut-off, value = 0.919 
+ 	 Flagging column 263 
+ Combination row 262 and column 263 is above the cut-off, value = 0.916 
+ 	 Flagging column 263 
+ Combination row 253 and column 264 is above the cut-off, value = 0.901 
+ 	 Flagging column 264 
+ Combination row 254 and column 264 is above the cut-off, value = 0.92 
+ 	 Flagging column 264 
+ Combination row 255 and column 264 is above the cut-off, value = 0.991 
+ 	 Flagging column 264 
+ Combination row 262 and column 264 is above the cut-off, value = 0.909 
+ 	 Flagging column 264 
+ Combination row 263 and column 264 is above the cut-off, value = 0.927 
+ 	 Flagging column 264 
+ Combination row 256 and column 265 is above the cut-off, value = 0.989 
+ 	 Flagging column 256 
+ Combination row 257 and column 265 is above the cut-off, value = 0.922 
+ 	 Flagging column 257 
+ Combination row 258 and column 265 is above the cut-off, value = 0.906 
+ 	 Flagging column 265 
+ Combination row 256 and column 266 is above the cut-off, value = 0.923 
+ 	 Flagging column 266 
+ Combination row 257 and column 266 is above the cut-off, value = 0.99 
+ 	 Flagging column 266 
+ Combination row 258 and column 266 is above the cut-off, value = 0.917 
+ 	 Flagging column 266 
+ Combination row 265 and column 266 is above the cut-off, value = 0.932 
+ 	 Flagging column 266 
+ Combination row 256 and column 267 is above the cut-off, value = 0.91 
+ 	 Flagging column 256 
+ Combination row 257 and column 267 is above the cut-off, value = 0.919 
+ 	 Flagging column 257 
+ Combination row 258 and column 267 is above the cut-off, value = 0.99 
+ 	 Flagging column 267 
+ Combination row 265 and column 267 is above the cut-off, value = 0.918 
+ 	 Flagging column 265 
+ Combination row 266 and column 267 is above the cut-off, value = 0.928 
+ 	 Flagging column 266 
+ Combination row 268 and column 269 is above the cut-off, value = 0.906 
+ 	 Flagging column 269 
+ Combination row 269 and column 270 is above the cut-off, value = 0.901 
+ 	 Flagging column 269 
+ Combination row 274 and column 275 is above the cut-off, value = 0.92 
+ 	 Flagging column 275 
+ Combination row 275 and column 276 is above the cut-off, value = 0.909 
+ 	 Flagging column 276 
+ Combination row 277 and column 278 is above the cut-off, value = 0.927 
+ 	 Flagging column 277 
+ Combination row 277 and column 279 is above the cut-off, value = 0.916 
+ 	 Flagging column 279 
+ Combination row 278 and column 279 is above the cut-off, value = 0.927 
+ 	 Flagging column 279 
+ Combination row 280 and column 281 is above the cut-off, value = 0.933 
+ 	 Flagging column 281 
+ Combination row 280 and column 282 is above the cut-off, value = 0.915 
+ 	 Flagging column 280 
+ Combination row 281 and column 282 is above the cut-off, value = 0.929 
+ 	 Flagging column 281 
+ Combination row 283 and column 284 is above the cut-off, value = 0.942 
+ 	 Flagging column 284 
+ Combination row 283 and column 285 is above the cut-off, value = 0.933 
+ 	 Flagging column 285 
+ Combination row 284 and column 285 is above the cut-off, value = 0.944 
+ 	 Flagging column 285 
+ Combination row 291 and column 292 is above the cut-off, value = 0.979 
+ 	 Flagging column 291 
+ Combination row 1 and column 386 is above the cut-off, value = 0.907 
+ 	 Flagging column 386 
+ Combination row 3 and column 391 is above the cut-off, value = 0.961 
+ 	 Flagging column 391 
+ Combination row 15 and column 433 is above the cut-off, value = 0.983 
+ 	 Flagging column 433 
+ Combination row 16 and column 434 is above the cut-off, value = 0.982 
+ 	 Flagging column 434 
+ Combination row 12 and column 435 is above the cut-off, value = 0.981 
+ 	 Flagging column 435 
+ Combination row 17 and column 437 is above the cut-off, value = 0.949 
+ 	 Flagging column 17 
+ Combination row 4 and column 439 is above the cut-off, value = 1 
+ 	 Flagging column 4 
+ Combination row 229 and column 440 is above the cut-off, value = 0.983 
+ 	 Flagging column 440 
+ Combination row 229 and column 447 is above the cut-off, value = 0.976 
+ 	 Flagging column 447 
+ Combination row 440 and column 447 is above the cut-off, value = 0.982 
+ 	 Flagging column 447 
+ Combination row 244 and column 448 is above the cut-off, value = 0.929 
+ 	 Flagging column 244 
+ Combination row 245 and column 448 is above the cut-off, value = 0.942 
+ 	 Flagging column 245 
+ Combination row 246 and column 448 is above the cut-off, value = 0.999 
+ 	 Flagging column 246 
+ Combination row 249 and column 448 is above the cut-off, value = 0.901 
+ 	 Flagging column 448 
+ Combination row 451 and column 453 is above the cut-off, value = 0.962 
+ 	 Flagging column 453 
+ Combination row 450 and column 456 is above the cut-off, value = 0.96 
+ 	 Flagging column 456 
+ Combination row 467 and column 468 is above the cut-off, value = 0.938 
+ 	 Flagging column 467 
+ Combination row 467 and column 469 is above the cut-off, value = 0.94 
+ 	 Flagging column 469 
+ Combination row 468 and column 470 is above the cut-off, value = 0.904 
+ 	 Flagging column 470 
+ Combination row 469 and column 470 is above the cut-off, value = 0.936 
+ 	 Flagging column 469 
+ Combination row 486 and column 488 is above the cut-off, value = 0.954 
+ 	 Flagging column 486 
+ Combination row 486 and column 490 is above the cut-off, value = 0.954 
+ 	 Flagging column 486 
+ Combination row 488 and column 490 is above the cut-off, value = 1 
+ 	 Flagging column 488 
+ Combination row 489 and column 491 is above the cut-off, value = 1 
+ 	 Flagging column 489 
+ Combination row 489 and column 492 is above the cut-off, value = 1 
+ 	 Flagging column 489 
+ Combination row 491 and column 492 is above the cut-off, value = 1 
+ 	 Flagging column 491 
+ Combination row 496 and column 498 is above the cut-off, value = 1 
+ 	 Flagging column 496 
+ Combination row 497 and column 499 is above the cut-off, value = 1 
+ 	 Flagging column 497 
+ Combination row 493 and column 511 is above the cut-off, value = 0.923 
+ 	 Flagging column 511 
+ Combination row 290 and column 512 is above the cut-off, value = 1 
+ 	 Flagging column 512 
+ Combination row 507 and column 514 is above the cut-off, value = 0.946 
+ 	 Flagging column 507 
+ Combination row 513 and column 514 is above the cut-off, value = 0.95 
+ 	 Flagging column 514 
+ Combination row 515 and column 516 is above the cut-off, value = 0.947 
+ 	 Flagging column 516 
+ Combination row 286 and column 517 is above the cut-off, value = 1 
+ 	 Flagging column 517 
+ Combination row 289 and column 518 is above the cut-off, value = 1 
+ 	 Flagging column 289 
+ Combination row 392 and column 519 is above the cut-off, value = 0.97 
+ 	 Flagging column 392 
+ Combination row 5 and column 520 is above the cut-off, value = 0.949 
+ 	 Flagging column 5 
+ Combination row 5 and column 521 is above the cut-off, value = -0.997 
+ 	 Flagging column 5 
+ Combination row 520 and column 521 is above the cut-off, value = -0.947 
+ 	 Flagging column 521 
+ Combination row 277 and column 522 is above the cut-off, value = 0.939 
+ 	 Flagging column 522 
+ Combination row 278 and column 522 is above the cut-off, value = 0.982 
+ 	 Flagging column 522 
+ Combination row 279 and column 522 is above the cut-off, value = 0.982 
+ 	 Flagging column 522 
+ Combination row 280 and column 523 is above the cut-off, value = 0.941 
+ 	 Flagging column 523 
+ Combination row 281 and column 523 is above the cut-off, value = 0.982 
+ 	 Flagging column 523 
+ Combination row 282 and column 523 is above the cut-off, value = 0.982 
+ 	 Flagging column 523 
+ Combination row 464 and column 524 is above the cut-off, value = 0.938 
+ 	 Flagging column 524 
+ Combination row 7 and column 526 is above the cut-off, value = 1 
+ 	 Flagging column 7 
+ Combination row 310 and column 529 is above the cut-off, value = 0.902 
+ 	 Flagging column 529 
+ Combination row 531 and column 537 is above the cut-off, value = 0.99 
+ 	 Flagging column 537 
+ Combination row 465 and column 538 is above the cut-off, value = 0.991 
+ 	 Flagging column 538 
+ Combination row 466 and column 539 is above the cut-off, value = 0.972 
+ 	 Flagging column 539 
+ Combination row 540 and column 541 is above the cut-off, value = 0.95 
+ 	 Flagging column 540 
+ Combination row 543 and column 544 is above the cut-off, value = 0.954 
+ 	 Flagging column 544 
+ Combination row 543 and column 545 is above the cut-off, value = 0.907 
+ 	 Flagging column 545 
+ Combination row 544 and column 545 is above the cut-off, value = 0.924 
+ 	 Flagging column 545 
+ Combination row 545 and column 546 is above the cut-off, value = 0.956 
+ 	 Flagging column 546 
+ Combination row 545 and column 547 is above the cut-off, value = 0.935 
+ 	 Flagging column 545 
+ Combination row 546 and column 547 is above the cut-off, value = 0.927 
+ 	 Flagging column 546 
+ Combination row 550 and column 565 is above the cut-off, value = 0.953 
+ 	 Flagging column 550 
+ Combination row 551 and column 566 is above the cut-off, value = 0.916 
+ 	 Flagging column 551 
+ Combination row 295 and column 567 is above the cut-off, value = 0.935 
+ 	 Flagging column 567 
+ Combination row 554 and column 569 is above the cut-off, value = 0.92 
+ 	 Flagging column 554 
+ Combination row 301 and column 573 is above the cut-off, value = 0.974 
+ 	 Flagging column 573 
+ Combination row 294 and column 579 is above the cut-off, value = 0.942 
+ 	 Flagging column 579 
+ Combination row 296 and column 586 is above the cut-off, value = 0.958 
+ 	 Flagging column 586 
+ Combination row 586 and column 589 is above the cut-off, value = 0.91 
+ 	 Flagging column 586 
+ [1] "derived_cogA_MEMORIA_TOTAL"      "mentalvar_A_TMCGRAV"             "basiclab_LABA26T_N"             
+ [4] "basiclab_LABA26U_N"              "basiclab_LABA26V_P"              "basiclab_LABA26X_P"             
+ [7] "basiclab_LABA26X_N"              "EKG_a_vfccl_rrdv_dt"             "EKG_a_vfccl_rmssd_dt"           
+[10] "EKG_a_vfccl_hfp_dt"              "bloodpresure_itba1b"             "bloodpresure_itba2b"            
+[13] "bloodpresure_itba2c"             "bloodpresure_itba3b"             "bloodpresure_itba3c"            
+[16] "bloodpresure_itba4b"             "bloodpresure_itba4c"             "bloodpresure_itba5b"            
+[19] "bloodpresure_mupa1b"             "bloodpresure_mupa1c"             "bloodpresure_mupa2a"            
+[22] "bloodpresure_mupa2b"             "bloodpresure_mupa2c"             "bloodpresure_mupa3a"            
+[25] "bloodpresure_mupa3b"             "bloodpresure_mupa3c"             "bloodpresure_mupa4b"            
+[28] "bloodpresure_mupa6b"             "bloodpresure_mupa6c"             "bloodpresure_pasa03c"           
+[31] "bloodpresure_pasa04b"            "bloodpresure_pasa05b"            "bloodpresure_pasa05c"           
+[34] "smoking_hvsa01"                  "socio_economic_psea01"           "cognition_fcoa8"                
+[37] "cognition_fcoa9"                 "cognition_fcoa10sc"              "job_related_hoca20"             
+[40] "job_related_hoca01"              "bp_derivedA_PASTIB"              "bp_derivedA_ORTHYPSYS3"         
+[43] "bp_derivedA_ORTHYPDIA3"          "labs_derivedA_DM_SEM_A1C"        "labs_derivedA_DM_SEM_A1C_D"     
+[46] "derived_A_heavydrinker"          "derived_A_PESO"                  "derived_A_IMC3"                 
+[49] "derived_A_VARPESOABS"            "derived_A_CINT"                  "derived_A_ANONASCIMENTO"        
+[52] "derived_A_PSIS"                  "derived_A_PDIA"                  "derived_A_THAS2"                
+[55] "derived_A_RCPDIABETES"           "derived_A_CINT_AN"               "derived_A_HIPERTRIGMED"         
+[58] "derived_A_BAIXOHDLMED"           "derived_A_FRAMINGHAM_CHD_CHOL"   "derived_A_FRAMINGHAM_CVD_MODEL1"
+[61] "derived_A_FRAMINGHAM_CVD_MODEL2" "derived_familial_A_FAMMIANYALL"  "derived_familial_A_FAMREVANYALL"
+[64] "derived_familial_A_FAMSDANYALL"  "derived_familial_A_FAMSTKANYALL" "basiclab_LABA3"                 
+[67] "basiclab_LABA16"                 "basiclab_LABA26F"                "basiclab_LABA26N"               
+[70] "EKG_a_vfccl_bpmmin_dt"           "EKG_a_vfccl_bpmmed_dt"           "bloodpresure_itba1a"            
+[73] "bloodpresure_itba1c"             "bloodpresure_itba5a"             "bloodpresure_itba3a"            
+[76] "bloodpresure_pasa03a"            "bloodpresure_pasa04a"            "anthropometry_pasa01dir"        
+[79] "derived_cogA_TRILHA_SEGUNDOS"    "sociodem_rcta8"                  "labs_derivedA_DM"               
+[82] "alcohol_derivedA_VOLVINHOTINTO"  "alcohol_derivedA_VOLVINHO"       "alcohol_derivedA_VOLCEVA"       
+[85] "alcohol_derivedA_VOLALCCEVA"     "pa_derivedA_MINFRACO"            "pa_derivedA_MINMODERADO"        
+[88] "derived_A_IMC1"                  "anthropometry_anta4"             "socio_economic_psea04"          
+[91] "sociodem_idadea"                 "sociodem_vifa30"                 "derived_A_SMJ_AS"               
+[94] "derived_familial_A_FAMCHD60FAT"  "derived_familial_A_FAMCHD60PAR"  "derived_familial_A_FAMCHDANYFAT"
