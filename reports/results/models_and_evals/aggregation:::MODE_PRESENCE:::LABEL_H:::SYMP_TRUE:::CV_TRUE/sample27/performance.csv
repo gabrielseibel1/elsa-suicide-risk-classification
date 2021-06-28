@@ -1,0 +1,2 @@
+id                                                                  ,f2                ,prauc             ,precision,recall            ,f                 ,rocauc            ,sens              ,spec              ,brier             ,true_positives,false_negatives,false_positives,true_negatives
+aggregation:::MODE_PRESENCE:::LABEL_H:::SYMP_TRUE:::CV_TRUE/sample27,0.7163323782234957,0.6680481517571949,0.4      ,0.8928571428571429,0.5524861878453039,0.8211227984344422,0.8928571428571429,0.4863013698630137,0.2067822923960599,100           ,12             ,150            ,142

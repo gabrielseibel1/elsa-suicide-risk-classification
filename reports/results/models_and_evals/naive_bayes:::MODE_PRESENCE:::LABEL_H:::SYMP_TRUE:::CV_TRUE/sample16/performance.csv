@@ -1,0 +1,2 @@
+id                                                                  ,f2               ,prauc             ,precision          ,recall,f                 ,rocauc            ,sens ,spec              ,brier              ,true_positives,false_negatives,false_positives,true_negatives
+naive_bayes:::MODE_PRESENCE:::LABEL_H:::SYMP_TRUE:::cv_TRUE/sample16,0.703012912482066,0.5194034094232406,0.39357429718875503,0.875 ,0.5429362880886427,0.7717404598825832,0.875,0.4828767123287671,0.34718196974629706,98            ,14             ,151            ,141

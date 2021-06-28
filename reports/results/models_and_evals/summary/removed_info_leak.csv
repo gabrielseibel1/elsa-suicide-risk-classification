@@ -1,0 +1,15 @@
+feature                   ,elsa_description
+mentalvar__TMAD           ,MADD
+mentalvar_a_DEP           ,MDD
+mentalvar_A_DEPGRAVE      ,Severe MDD
+mentalvar_A_DEPLEVCSINT   ,Mild MDD with somatic symptoms
+mentalvar_A_DEPLEVSSINT   ,Mild MDD no somatic symptoms
+mentalvar_A_DEPMODCSINT   ,Moderate MDD with somatic
+mentalvar_A_DEPMODSSINT   ,Moderate MDD no somatic
+mentalvar_A_ESCORETOTAL   ,CMD score (continuous)
+mentalvar_A_SINTIDEIADEP  ,depressive thoughts symptoms
+mentalvar_A_TMC           ,Common Mental Disorder (bin)
+mentalvar_A_TMCGRAV       ,Common Mental Disorders (3 levels)
+mentalvar_MDD_trajectories,group(a_DEP b_DEP)
+mentalvar_only_incident   ,incident MDD
+mentalvar_only_remitted   ,remitted MDD

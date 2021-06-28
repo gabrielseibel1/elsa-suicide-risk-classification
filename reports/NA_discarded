@@ -1,0 +1,703 @@
+# A tibble: 700 x 2
+    variable                          NAs
+    <chr>                           <dbl>
+  1 sociodem_vifa36a                0.985
+  2 sociodem_vifa37                 0.986
+  3 derived_cogA_TRILHA_300SEGUNDOS 0.130
+  4 mentalvar_only_incident         0.117
+  5 mentalvar_only_remitted         0.122
+  6 mentalvar_only_persistent       0.140
+  7 basiclab_LABA14_CARGA           0.938
+  8 basiclab_LABA14_TTG             0.102
+  9 basiclab_LABA21                 0.898
+ 10 basiclab_LABA23                 0.105
+ 11 basiclab_LABA28                 0.940
+ 12 basiclab_LABA26I                0.122
+ 13 basiclab_LABA26R_P              0.552
+ 14 basiclab_LABA26R_N              0.552
+ 15 EKG_a_vfccl_bpmmin_pe           0.943
+ 16 EKG_a_vfccl_bpmmax_pe           0.943
+ 17 EKG_a_vfccl_bpmmed_pe           0.943
+ 18 EKG_a_vfccl_rrmed_pe            0.943
+ 19 EKG_a_vfccl_rrvar_pe            0.943
+ 20 EKG_a_vfccl_rrdv_pe             0.943
+ 21 EKG_a_vfccl_pnn_pe              0.943
+ 22 EKG_a_vfccl_rmssd_pe            0.943
+ 23 EKG_a_vfccl_triangindex_pe      0.943
+ 24 EKG_a_vfccl_areavlf_pe          0.943
+ 25 EKG_a_vfccl_arealf_pe           0.943
+ 26 EKG_a_vfccl_areahf_pe           0.943
+ 27 EKG_a_vfccl_lfp_pe              0.943
+ 28 EKG_a_vfccl_hfp_pe              0.943
+ 29 EKG_a_vfccl_lfhf_pe             0.943
+ 30 us_liverusg_abdwal_qual         0.165
+ 31 us_liverusg_liver_qual          0.165
+ 32 us_liverusg_wall_minsubcut      0.304
+ 33 us_liverusg_wall_maxsubcut      0.368
+ 34 us_liverusg_wall_preperit       0.311
+ 35 dietary_info_diea1s             1.000
+ 36 dietary_info_diea2q             0.419
+ 37 dietary_info_diea2s             0.999
+ 38 dietary_info_diea3q             0.466
+ 39 dietary_info_diea3s             1.000
+ 40 dietary_info_diea4q             0.479
+ 41 dietary_info_diea4s             1.000
+ 42 dietary_info_diea5q             0.566
+ 43 dietary_info_diea5s             1.000
+ 44 dietary_info_diea6q             0.107
+ 45 dietary_info_diea6s             1.000
+ 46 dietary_info_diea7q             0.597
+ 47 dietary_info_diea7s             1.000
+ 48 dietary_info_diea8q             0.510
+ 49 dietary_info_diea8s             1.000
+ 50 dietary_info_diea9q             0.434
+ 51 dietary_info_diea9s             1.000
+ 52 dietary_info_diea10q            0.347
+ 53 dietary_info_diea10s            1.000
+ 54 dietary_info_diea11q            0.568
+ 55 dietary_info_diea11s            0.999
+ 56 dietary_info_diea12q            0.281
+ 57 dietary_info_diea12s            1    
+ 58 dietary_info_diea13t            0.592
+ 59 dietary_info_diea13q            0.592
+ 60 dietary_info_diea13s            1.000
+ 61 dietary_info_diea14q            0.532
+ 62 dietary_info_diea14s            1.000
+ 63 dietary_info_diea15q            0.133
+ 64 dietary_info_diea15s            1    
+ 65 dietary_info_diea16q            0.286
+ 66 dietary_info_diea16s            0.996
+ 67 dietary_info_diea17q            0.416
+ 68 dietary_info_diea17s            1.000
+ 69 dietary_info_diea18q            0.122
+ 70 dietary_info_diea18s            0.959
+ 71 dietary_info_diea19s            0.999
+ 72 dietary_info_diea20q            0.201
+ 73 dietary_info_diea20s            0.998
+ 74 dietary_info_diea21q            0.171
+ 75 dietary_info_diea21s            0.998
+ 76 dietary_info_diea22q            0.390
+ 77 dietary_info_diea22s            0.934
+ 78 dietary_info_diea23q            0.547
+ 79 dietary_info_diea23s            0.985
+ 80 dietary_info_diea24q            0.345
+ 81 dietary_info_diea24s            0.967
+ 82 dietary_info_diea25q            0.712
+ 83 dietary_info_diea25s            0.956
+ 84 dietary_info_diea26q            0.330
+ 85 dietary_info_diea26s            0.884
+ 86 dietary_info_diea27q            0.376
+ 87 dietary_info_diea27s            0.936
+ 88 dietary_info_diea28q            0.700
+ 89 dietary_info_diea28s            0.961
+ 90 dietary_info_diea29q            0.540
+ 91 dietary_info_diea29s            0.863
+ 92 dietary_info_diea30q            0.523
+ 93 dietary_info_diea30s            0.910
+ 94 dietary_info_diea31q            0.573
+ 95 dietary_info_diea31s            0.832
+ 96 dietary_info_diea32t            0.481
+ 97 dietary_info_diea32q            0.481
+ 98 dietary_info_diea32s            0.992
+ 99 dietary_info_diea33s            0.999
+100 dietary_info_diea34q            0.184
+101 dietary_info_diea34s            0.999
+102 dietary_info_diea35q            0.310
+103 dietary_info_diea35s            0.999
+104 dietary_info_diea36q            0.293
+105 dietary_info_diea36s            0.998
+106 dietary_info_diea37s            0.999
+107 dietary_info_diea38q            0.298
+108 dietary_info_diea38s            0.998
+109 dietary_info_diea39q            0.224
+110 dietary_info_diea39s            0.999
+111 dietary_info_diea40q            0.405
+112 dietary_info_diea40s            0.997
+113 dietary_info_diea41q            0.464
+114 dietary_info_diea41s            0.994
+115 dietary_info_diea42s            1    
+116 dietary_info_diea43s            1.000
+117 dietary_info_diea44s            1.000
+118 dietary_info_diea45q            0.305
+119 dietary_info_diea45s            0.999
+120 dietary_info_diea46q            0.350
+121 dietary_info_diea46s            0.993
+122 dietary_info_diea47q            0.338
+123 dietary_info_diea47s            0.997
+124 dietary_info_diea48q            0.502
+125 dietary_info_diea48s            0.973
+126 dietary_info_diea49s            1.000
+127 dietary_info_diea50q            0.509
+128 dietary_info_diea50s            0.998
+129 dietary_info_diea51q            0.521
+130 dietary_info_diea51s            0.998
+131 dietary_info_diea52q            0.485
+132 dietary_info_diea52s            0.994
+133 dietary_info_diea53q            0.371
+134 dietary_info_diea53s            1    
+135 dietary_info_diea54q            0.295
+136 dietary_info_diea54s            1.000
+137 dietary_info_diea55t            0.638
+138 dietary_info_diea55q            0.638
+139 dietary_info_diea55s            1.000
+140 dietary_info_diea56t            0.179
+141 dietary_info_diea56q            0.179
+142 dietary_info_diea56s            1.000
+143 dietary_info_diea57t            0.362
+144 dietary_info_diea57q            0.362
+145 dietary_info_diea57s            0.999
+146 dietary_info_diea58q            0.239
+147 dietary_info_diea58s            1.000
+148 dietary_info_diea59q            0.299
+149 dietary_info_diea59s            1.000
+150 dietary_info_diea60t            0.519
+151 dietary_info_diea60q            0.519
+152 dietary_info_diea60s            1.000
+153 dietary_info_diea61q            0.450
+154 dietary_info_diea61s            1    
+155 dietary_info_diea62q            0.569
+156 dietary_info_diea62s            1.000
+157 dietary_info_diea63q            0.654
+158 dietary_info_diea63s            1.000
+159 dietary_info_diea64q            0.816
+160 dietary_info_diea64s            0.996
+161 dietary_info_diea65q            0.633
+162 dietary_info_diea65s            0.999
+163 dietary_info_diea66s            1.000
+164 dietary_info_diea67q            0.419
+165 dietary_info_diea67s            1.000
+166 dietary_info_diea68q            0.148
+167 dietary_info_diea68s            1.000
+168 dietary_info_diea69q            0.486
+169 dietary_info_diea69s            1    
+170 dietary_info_diea70q            0.304
+171 dietary_info_diea70s            1.000
+172 dietary_info_diea71q            0.428
+173 dietary_info_diea71s            1.000
+174 dietary_info_diea72q            0.736
+175 dietary_info_diea72s            1.000
+176 dietary_info_diea73q            0.555
+177 dietary_info_diea73s            1.000
+178 dietary_info_diea74q            0.368
+179 dietary_info_diea74s            1.000
+180 dietary_info_diea75q            0.702
+181 dietary_info_diea75s            1.000
+182 dietary_info_diea76q            0.217
+183 dietary_info_diea76s            0.999
+184 dietary_info_diea77q            0.487
+185 dietary_info_diea77s            0.999
+186 dietary_info_diea78q            0.652
+187 dietary_info_diea78s            0.999
+188 dietary_info_diea79q            0.677
+189 dietary_info_diea79s            0.997
+190 dietary_info_diea80q            0.941
+191 dietary_info_diea80s            0.996
+192 dietary_info_diea81q            0.265
+193 dietary_info_diea81s            1.000
+194 dietary_info_diea82q            0.119
+195 dietary_info_diea82s            1.000
+196 dietary_info_diea83q            0.774
+197 dietary_info_diea83s            1.000
+198 dietary_info_diea84q            0.482
+199 dietary_info_diea84s            1.000
+200 dietary_info_diea85q            0.519
+201 dietary_info_diea85s            1.000
+202 dietary_info_diea86q            0.928
+203 dietary_info_diea86s            1.000
+204 dietary_info_diea87q            0.745
+205 dietary_info_diea87s            1    
+206 dietary_info_diea88q            0.618
+207 dietary_info_diea88s            0.998
+208 dietary_info_diea89q            0.479
+209 dietary_info_diea89s            1.000
+210 dietary_info_diea90t            0.896
+211 dietary_info_diea90q            0.896
+212 dietary_info_diea90s            1.000
+213 dietary_info_diea91t            0.775
+214 dietary_info_diea91q            0.775
+215 dietary_info_diea91s            1.000
+216 dietary_info_diea92q            0.359
+217 dietary_info_diea92s            0.939
+218 dietary_info_diea93q            0.881
+219 dietary_info_diea93s            0.994
+220 dietary_info_diea94q            0.423
+221 dietary_info_diea94s            0.970
+222 dietary_info_diea95q            0.627
+223 dietary_info_diea95s            0.978
+224 dietary_info_diea96q            0.682
+225 dietary_info_diea96s            1.000
+226 dietary_info_diea97q            0.547
+227 dietary_info_diea97s            0.997
+228 dietary_info_diea98q            0.604
+229 dietary_info_diea98s            0.997
+230 dietary_info_diea99q            0.341
+231 dietary_info_diea99s            0.999
+232 dietary_info_diea100q           0.457
+233 dietary_info_diea100s           1.000
+234 dietary_info_diea101q           0.654
+235 dietary_info_diea101s           0.999
+236 dietary_info_diea102q           0.756
+237 dietary_info_diea102s           0.998
+238 dietary_info_diea103q           0.625
+239 dietary_info_diea103s           0.999
+240 dietary_info_diea104t           0.280
+241 dietary_info_diea104q           0.280
+242 dietary_info_diea104s           1.000
+243 dietary_info_diea105s           1.000
+244 dietary_info_diea106t           0.237
+245 dietary_info_diea106q           0.237
+246 dietary_info_diea106s           0.998
+247 dietary_info_diea107t           0.455
+248 dietary_info_diea107q           0.455
+249 dietary_info_diea107s           1.000
+250 dietary_info_diea108t           0.757
+251 dietary_info_diea108q           0.757
+252 dietary_info_diea108s           0.999
+253 dietary_info_diea109t           0.513
+254 dietary_info_diea109q           0.513
+255 dietary_info_diea109s           0.992
+256 dietary_info_diea110q           0.910
+257 dietary_info_diea110s           0.999
+258 dietary_info_diea111q           0.509
+259 dietary_info_diea111s           0.995
+260 dietary_info_diea112t           0.569
+261 dietary_info_diea112q           0.569
+262 dietary_info_diea112s           0.986
+263 dietary_info_diea113q           0.839
+264 dietary_info_diea113s           0.999
+265 dietary_info_diea114q           0.535
+266 dietary_info_diea114s           0.988
+267 dietary_info_diea115            0.198
+268 dietary_info_diea116            0.198
+269 dietary_info_diea124a           0.646
+270 dietary_info_diea124b           0.957
+271 dietary_info_diea124c           0.929
+272 dietary_info_diea124d           0.953
+273 dietary_info_diea124e           0.988
+274 dietary_info_diea130a           0.807
+275 dietary_info_diea130b           0.899
+276 dietary_info_diea130c           0.958
+277 dietary_info_diea130d           0.984
+278 dietary_info_diea130e           0.997
+279 dietary_info_diea130f           0.961
+280 dietary_info_diea130h           0.916
+281 dietary_info_diea132a           0.885
+282 dietary_info_diea132b           0.963
+283 dietary_info_diea132c           0.992
+284 dietary_info_diea132d           0.988
+285 dietary_info_diea132e           0.945
+286 dietary_info_diea132f           0.979
+287 dietary_info_diea132g           0.982
+288 dietary_info_diea132h           0.989
+289 dietary_info_diea132i           0.997
+290 dietary_info_diea132j           0.954
+291 dietary_info_diea132k           0.986
+292 dietary_info_diea132l           0.994
+293 dietary_info_diea132m           0.987
+294 dietary_info_diea132o           0.959
+295 dietary_info_diea134            0.105
+296 carotid_imta_lccfavg            0.230
+297 carotid_imta_lccfmin            0.230
+298 carotid_imta_lccfmax            0.230
+299 carotid_imta_lccvessel          0.230
+300 carotid_imta_lcclumen           0.231
+301 carotid_imta_rccfavg            0.235
+302 carotid_imta_rccfmin            0.235
+303 carotid_imta_rccfmax            0.235
+304 carotid_imta_rccvessel          0.235
+305 carotid_imta_rcclumen           0.236
+306 familial_hfda02a                0.863
+307 familial_hfda02b                0.866
+308 familial_hfda02d                0.918
+309 familial_hfda02e                0.920
+310 familial_hfda02g                0.941
+311 familial_hfda02h                0.942
+312 familial_hfda04a                0.824
+313 familial_hfda04b                0.831
+314 familial_hfda04d                0.909
+315 familial_hfda04e                0.913
+316 familial_hfda04g                0.930
+317 familial_hfda04h                0.931
+318 familial_hfda06a                0.867
+319 familial_hfda06b                0.870
+320 familial_hfda06d                0.889
+321 familial_hfda06e                0.892
+322 familial_hfda06g                0.954
+323 familial_hfda06h                0.955
+324 familial_hfda08a                0.706
+325 familial_hfda08b                0.771
+326 familial_hfda08d                0.530
+327 familial_hfda08e                0.609
+328 familial_hfda08g                0.705
+329 familial_hfda08h                0.755
+330 familial_hfda10a                0.926
+331 familial_hfda10b                0.936
+332 familial_hfda10d                0.896
+333 familial_hfda10e                0.909
+334 familial_hfda10g                0.916
+335 familial_hfda10h                0.924
+336 familial_hfda12a                0.873
+337 familial_hfda12b                0.888
+338 familial_hfda12d                0.806
+339 familial_hfda12e                0.827
+340 familial_hfda12g                0.851
+341 familial_hfda12h                0.868
+342 familial_hfda14a                0.963
+343 familial_hfda14b                0.976
+344 familial_hfda14d                0.945
+345 familial_hfda14e                0.961
+346 familial_hfda14g                0.869
+347 familial_hfda14h                0.885
+348 familial_hfda16a                0.937
+349 familial_hfda16b                0.939
+350 familial_hfda16d                0.958
+351 familial_hfda16e                0.960
+352 familial_hfda16g                0.945
+353 familial_hfda16h                0.948
+354 familial_hfda18a                0.826
+355 familial_hfda18b                0.831
+356 familial_hfda18f                0.853
+357 familial_hfda18g                0.856
+358 familial_hfda18k                0.871
+359 familial_hfda18l                0.875
+360 familial_hfda18p                0.979
+361 familial_hfda18q                0.980
+362 familial_hfda18u                0.996
+363 familial_hfda18v                0.996
+364 negativelifeevents_evea02       0.944
+365 negativelifeevents_evea03       0.990
+366 negativelifeevents_evea06       0.924
+367 negativelifeevents_evea08       0.983
+368 negativelifeevents_evea10       0.904
+369 negativelifeevents_evea11       0.984
+370 negativelifeevents_evea13       0.926
+371 negativelifeevents_evea14       0.865
+372 negativelifeevents_evea16       0.946
+373 negativelifeevents_evea17       0.991
+374 anamnesis_hmpa03a               0.662
+375 anamnesis_hmpa05a               0.913
+376 anamnesis_hmpa06                0.913
+377 anamnesis_hmpa07                0.987
+378 anamnesis_hmpa09a               0.648
+379 anamnesis_hmpa11a               0.982
+380 anamnesis_hmpa13a               0.968
+381 anamnesis_hmpa15a               0.984
+382 anamnesis_hmpa17a               0.972
+383 anamnesis_hmpa19a               0.996
+384 anamnesis_hmpa21a               0.987
+385 anamnesis_hmpa23a               0.827
+386 anamnesis_hmpa25a               0.984
+387 anamnesis_hmpa27a               0.892
+388 anamnesis_hmpa29a               0.980
+389 anamnesis_hmpa31a               0.987
+390 anamnesis_hmpa31b               0.998
+391 anamnesis_hmpa31c               0.979
+392 anamnesis_hmpa31d               0.886
+393 anamnesis_hmpa31e               0.957
+394 anamnesis_hmpa31g               0.936
+395 anamnesis_hmpa32a               0.788
+396 anamnesis_hmpa34a               0.916
+397 anamnesis_hmpa36a               0.954
+398 anamnesis_hmpa40                0.840
+399 anamnesis_hmpa41                0.976
+400 anamnesis_hmpa43                0.885
+401 anamnesis_hmpa44                0.885
+402 anamnesis_hmpa46a               0.983
+403 social_support_capa2            0.179
+404 social_support_capa6            0.195
+405 social_support_capa8            0.141
+406 social_support_capa12           0.108
+407 social_support_capa14           0.105
+408 social_support_capa18           0.173
+409 social_support_capa20           0.337
+410 social_support_capa22           0.166
+411 social_support_capa24           0.159
+412 social_support_capa28           0.105
+413 social_support_capa30           0.162
+414 social_support_capa32           0.188
+415 social_support_capa34           0.407
+416 social_support_capa36           0.242
+417 social_support_capa38           0.433
+418 social_support_capa40           0.152
+419 social_support_capa48           0.264
+420 social_support_capa54           0.140
+421 social_support_capa62           0.225
+422 smoking_hvsa02a                 0.570
+423 smoking_hvsa03                  0.569
+424 smoking_hvsa04a                 0.703
+425 smoking_hvsa05a                 0.570
+426 smoking_hvsa06a                 0.573
+427 smoking_hvsa08                  0.720
+428 smoking_hvsa09                  0.720
+429 smoking_hvsa10                  0.720
+430 religion_hvsa12                 0.306
+431 religion_hvsa14                 0.233
+432 socio_economic_hmpa54           0.321
+433 socio_economic_psea02           0.943
+434 socio_economic_psea03a          0.131
+435 socio_economic_psea07a          0.751
+436 home_info_vifa02                0.340
+437 home_info_vifa03                0.764
+438 home_info_vifa04                0.661
+439 home_info_vifa05a               0.247
+440 home_info_vifa06                0.252
+441 home_info_vifa07                0.250
+442 home_info_vifa09                0.246
+443 home_info_vifa12                0.196
+444 home_info_vifa13a               0.798
+445 home_info_vifa13b               0.798
+446 home_info_vifa14a               0.405
+447 home_info_vifa14b               0.405
+448 home_info_vifa15a               0.405
+449 home_info_vifa15b               0.405
+450 home_info_vifa17a               0.120
+451 home_info_vifa17b               0.121
+452 home_info_vifa17d               0.121
+453 home_info_vifa18a               0.343
+454 home_info_vifa18b               0.345
+455 home_info_vifa18d               0.343
+456 home_info_vifa19a               0.600
+457 home_info_vifa19b               0.602
+458 home_info_vifa19d               0.600
+459 home_info_vifa20a               0.841
+460 home_info_vifa20b               0.842
+461 home_info_vifa20d               0.841
+462 home_info_vifa21a               0.941
+463 home_info_vifa21b               0.942
+464 home_info_vifa21d               0.941
+465 home_info_vifa22a               0.977
+466 home_info_vifa22b               0.977
+467 home_info_vifa22d               0.977
+468 home_info_vifa23a               0.989
+469 home_info_vifa23b               0.989
+470 home_info_vifa23d               0.989
+471 home_info_vifa24a               0.995
+472 home_info_vifa24b               0.995
+473 home_info_vifa24d               0.995
+474 home_info_vifa25a               0.997
+475 home_info_vifa25b               0.997
+476 home_info_vifa25d               0.997
+477 home_info_vifa26a               0.999
+478 home_info_vifa26b               0.999
+479 home_info_vifa26d               0.999
+480 physical_activity_afia2a        0.603
+481 physical_activity_afia4a        0.780
+482 physical_activity_afia6a        0.780
+483 physical_activity_afia8a        0.958
+484 physical_activity_afia10a       0.281
+485 alcohol_cala2                   0.109
+486 alcohol_cala3                   0.800
+487 alcohol_cala4                   0.799
+488 alcohol_cala5                   0.799
+489 alcohol_cala6a                  0.761
+490 alcohol_cala6b                  0.965
+491 alcohol_cala6c                  0.584
+492 alcohol_cala7a                  0.953
+493 alcohol_cala7b                  0.982
+494 alcohol_cala7c                  0.375
+495 alcohol_cala8a                  0.892
+496 alcohol_cala8b                  0.739
+497 alcohol_cala8c                  0.860
+498 alcohol_cala8d                  0.979
+499 alcohol_cala8e                  0.709
+500 alcohol_cala9a                  0.883
+501 alcohol_cala9b                  0.984
+502 alcohol_cala9c                  0.444
+503 alcohol_cala10                  0.310
+504 alcohol_cala11                  0.310
+505 headache_cefa2                  0.297
+506 headache_cefa3                  0.297
+507 headache_cefa4                  0.300
+508 headache_cefa5                  0.311
+509 headache_cefa6                  0.296
+510 headache_cefa7                  0.296
+511 headache_cefa8                  0.336
+512 headache_cefa9                  0.298
+513 headache_cefa10                 0.299
+514 headache_cefa11                 0.298
+515 discrimination_disa1aa          0.972
+516 discrimination_disa1ab          0.980
+517 discrimination_disa1ac          0.993
+518 discrimination_disa1ad          0.993
+519 discrimination_disa1ae          0.997
+520 discrimination_disa1af          0.943
+521 discrimination_disa1ag          0.979
+522 discrimination_disa1ah          0.983
+523 discrimination_disa1ai          0.981
+524 discrimination_disa1ak          0.951
+525 discrimination_disa1b           0.822
+526 discrimination_disa2aa          0.992
+527 discrimination_disa2ab          0.994
+528 discrimination_disa2ac          0.997
+529 discrimination_disa2ad          1.000
+530 discrimination_disa2ae          0.999
+531 discrimination_disa2af          0.972
+532 discrimination_disa2ag          0.999
+533 discrimination_disa2ah          0.998
+534 discrimination_disa2ai          0.996
+535 discrimination_disa2ak          0.986
+536 discrimination_disa2b           0.943
+537 discrimination_disa3aa          0.978
+538 discrimination_disa3ab          0.992
+539 discrimination_disa3ac          0.999
+540 discrimination_disa3ad          1.000
+541 discrimination_disa3ae          0.999
+542 discrimination_disa3af          0.988
+543 discrimination_disa3ag          0.988
+544 discrimination_disa3ah          0.994
+545 discrimination_disa3ai          0.980
+546 discrimination_disa3ak          0.974
+547 discrimination_disa3b           0.909
+548 discrimination_disa4aa          0.960
+549 discrimination_disa4ab          0.983
+550 discrimination_disa4ac          0.998
+551 discrimination_disa4ad          0.997
+552 discrimination_disa4ae          0.999
+553 discrimination_disa4af          0.942
+554 discrimination_disa4ag          0.998
+555 discrimination_disa4ah          0.985
+556 discrimination_disa4ai          0.948
+557 discrimination_disa4ak          0.960
+558 discrimination_disa4b           0.814
+559 discrimination_disa5aa          0.983
+560 discrimination_disa5ab          0.995
+561 discrimination_disa5ac          0.997
+562 discrimination_disa5ad          0.998
+563 discrimination_disa5ae          0.999
+564 discrimination_disa5af          0.967
+565 discrimination_disa5ag          0.996
+566 discrimination_disa5ah          0.989
+567 discrimination_disa5ai          0.987
+568 discrimination_disa5ak          0.987
+569 discrimination_disa5b           0.921
+570 cognition_fcoa1b                0.990
+571 cognition_fcoa5sc               0.991
+572 cognition_fcoa6sc               0.991
+573 cognition_fcoa7sc               0.991
+574 cognition_fcoa11sc2             0.910
+575 cognition_fcoa12sc              0.990
+576 cognition_fcoa13sc1             0.991
+577 cognition_fcoa13sc2             0.991
+578 women_mula1                     0.458
+579 women_mula2                     0.457
+580 women_mula3                     0.679
+581 women_mula4a                    0.682
+582 women_mula5a                    0.776
+583 women_mula5b                    0.913
+584 women_mula5c                    0.990
+585 women_mula5d                    0.993
+586 women_mula5f                    0.996
+587 women_mula6                     0.459
+588 women_mula7                     0.457
+589 women_mula8a                    0.563
+590 women_mula9a                    0.562
+591 women_mula9b                    0.562
+592 women_mula9c                    0.562
+593 women_mula9d                    0.562
+594 women_mula10a                   0.562
+595 women_mula11                    0.565
+596 women_mula12                    0.568
+597 women_mula13a                   0.959
+598 women_mula14                    0.457
+599 women_mula15                    0.458
+600 women_mula16                    0.779
+601 women_mula17a                   0.977
+602 women_mula17b                   0.998
+603 women_mula17c                   1.000
+604 women_mula17d                   0.999
+605 women_mula17e                   0.993
+606 women_mula17f                   0.990
+607 women_mula17g                   0.997
+608 women_mula17h                   0.949
+609 women_mula17i                   0.976
+610 women_mula17j                   0.981
+611 women_mula17l                   0.994
+612 women_mula18a                   0.968
+613 women_mula19a                   0.968
+614 women_mula20                    0.970
+615 women_mula20a                   0.989
+616 women_mula21                    0.457
+617 women_mula22a                   0.610
+618 women_mula22b                   0.960
+619 women_mula22c                   0.996
+620 women_mula22d                   0.995
+621 women_mula22e                   0.976
+622 women_mula22g                   1.000
+623 women_mula23a                   0.603
+624 women_mula24a                   0.607
+625 women_mula25a                   0.608
+626 women_mula26                    0.458
+627 women_mula27a                   0.839
+628 women_mula28                    0.836
+629 women_mula29a                   0.890
+630 women_mula30                    0.958
+631 women_mula30a                   0.965
+632 women_mula31a                   0.839
+633 job_related_hoca24              0.108
+634 job_related_hoca29              0.648
+635 job_related_hoca30a             0.650
+636 job_related_hoca31              0.647
+637 job_related_hoca32              0.652
+638 job_related_hoca34              0.201
+639 job_related_hoca35              0.201
+640 job_related_hoca36              0.201
+641 job_related_hoca37              0.201
+642 job_related_hoca38              0.201
+643 job_related_hoca39              0.201
+644 job_related_hoca40              0.202
+645 job_related_hoca41              0.201
+646 job_related_hoca42              0.201
+647 job_related_hoca43              0.201
+648 job_related_hoca44              0.201
+649 job_related_hoca45              0.201
+650 job_related_hoca46              0.201
+651 job_related_hoca47              0.201
+652 job_related_hoca48              0.202
+653 job_related_hoca49              0.202
+654 job_related_hoca50              0.201
+655 job_related_hoca51              0.198
+656 job_related_hoca52              0.197
+657 job_related_hoca53              0.197
+658 job_related_hoca54              0.197
+659 job_related_hoca55              0.197
+660 job_related_hoca02a             0.200
+661 job_related_hoca04a             0.200
+662 job_related_hoca05              0.199
+663 job_related_hoca06a             0.687
+664 job_related_hoca07              0.200
+665 job_related_hoca08              0.200
+666 job_related_hoca09              0.199
+667 job_related_hoca10a             0.639
+668 job_related_hoca11a             0.802
+669 job_related_hoca12              0.801
+670 job_related_hoca13a             0.803
+671 job_related_hoca15a             0.802
+672 job_related_hoca16              0.801
+673 job_related_hoca17              0.904
+674 job_related_hoca18              0.904
+675 job_related_hoca19a             0.904
+676 eye_reta10                      0.258
+677 eye_reta11                      0.259
+678 derived_A_RCPTAMUNIFORME        0.287
+679 derived_A_ANOSDM                0.913
+680 derived_carotid_a_imta_maxmax   0.276
+681 derived_carotid_a_imta_maxavg   0.276
+682 derived_carotid_a_imta_avgavg   0.276
+683 others_cssa8                    0.999
+684 others_cssa9                    0.989
+685 others_cssa10                   0.999
+686 others_cssa11                   0.991
+687 others_cbaa2a                   0.993
+688 others_claa3                    0.657
+689 others_claa4                    0.657
+690 others_claa5                    0.656
+691 others_claa6                    0.661
+692 others_claa7a                   0.946
+693 others_claa7b                   0.940
+694 others_claa7c                   0.928
+695 others_claa7d                   0.760
+696 others_claa7e                   0.871
+697 others_pcoa2                    0.148
+698 others_pcoa3                    0.559
+699 others_pcoa4                    0.447
+700 others_vifa28a                  0.903

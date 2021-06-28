@@ -1,0 +1,48 @@
+feature                       ,elsa_description
+anamnesis_hmpa31h             ,which one (Q31)
+anamnesis_hmpa37a             ,which cancer (Q37)
+anamnesis_hmpa38              ,other health issues(Q38)
+derived_A_CLASSEMEDANTHIPERT  ,SAH treatment - drug combinations
+derived_A_RCPQOUTROPROBLULT12H,any health issue last 12h
+derived_A_STATUSVOP           ,VOP status
+dietary_info_diea130i         ,Qual outro motivo para dieta (Q130)
+dietary_info_diea132p         ,Qual outro suplemento (Q132)
+dietary_info_diea134a         ,Qual outro tipo de cafe (Q134)
+discrimination_disa1al        ,Discr trab: qual outra razao (Q1a)
+discrimination_disa2al        ,Discr moradia: qual outra razao (Q2a)
+discrimination_disa3al        ,Discr policia: qual outra razao (Q2a)
+discrimination_disa4al        ,Discr publico: qual outra razao (Q4a)
+discrimination_disa5al        ,Discr escola: qual outra razao (Q5a)
+familial_hfda18d              ,Qual cancer pai (Q18)
+familial_hfda18i              ,Qual cancer mae (Q18)
+familial_hfda18n              ,Qual cancer irma/o 1
+familial_hfda18s              ,Qual cancer irma/o 2
+familial_hfda18y              ,Qual cancer irma/o 3
+home_info_vifa03a             ,Qual outra situacao conjugal (Q4)
+home_info_vifa08a             ,Ocupacao do conjuge/parceiro (Q8)
+home_info_vifa10a             ,Qual outra pessoa chefe da familia (Q10)
+job_related_hoca03            ,Pricipais atividades no trabalho (Q3)
+job_related_hoca14a           ,Pricipais atividades no trabalho (Q14)
+job_related_hoca23a           ,Ocupacao no primeiro trabalho (Q3)
+job_related_hoca24a           ,Qual outro tipo primeiro trabalho (Q4)
+job_related_hoca25a           ,Qual outro chefe familia (Q5)
+job_related_hoca26            ,Ocupacao do chefe familia (Q6)
+job_related_hoca27a           ,Outro tipo trabalho do chefe familia (Q7)
+job_related_hoca32a           ,Qual outro esquema plantao (Q12)
+metadata_centroa              ,Centro de Investigacao
+metadata_ecga3                ,Tempo (mm:ss)
+metadata_rcpadataapini        ,Data inic aplic RCP
+negativelifeevents_evea05a    ,Hospitalizado 1x: motivo(Q5)
+negativelifeevents_evea07a    ,Hospitalizado +1x: motivos (Q7)
+others_cssa11qou              ,Qual outra intercorrencia na sobrecarga
+others_cssa6                  ,Inicio da ingestao da sobrecarga
+others_cssa7                  ,Fim da ingestao da sobrecarga
+others_esca04                 ,Hora final entrevista
+religion_hvsa14a              ,Qual outra religiao (Q14)
+socio_economic_psea05a        ,Cor ou raca (Q5)
+socio_economic_psea08a        ,Qual outra condicao do imovel (Q8)
+women_mula17m                 ,Qual outro contraceptivo (Q17)
+women_mula20b                 ,Dado Faltante med
+women_mula22h                 ,?
+women_mula30b                 ,Dado Falt med horm
+women_mula5g                  ,Qual outra razao parou de menstruar (Q5)

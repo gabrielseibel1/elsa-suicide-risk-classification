@@ -1,0 +1,52 @@
+feature                      ,label
+bp_derivedA_RAZAOPAS         ,Ankle brachial index
+cisab5                       ,Tired for more than 3h in last 7d
+cisae7                       ,Argument fight in last 7d
+cisag1                       ,Sad/depressed in last 30d
+cisag2                       ,Enjoyed things as used to in last 30d
+cisag4                       ,Sad/depressed in last 7d
+cisag5                       ,Enjoyed things as used to in last 7d
+cisag6                       ,#days sad/incapable of enjoyment last 7d
+cisag7                       ,Sad/incapable of enjoyment 3h+ in last 7d
+cisah1                       ,Worst time of day for sadness last 7d
+cisah2                       ,Sexual desire in last 30d
+cisah3a                      ,When sad got restless in last 7d
+cisah3b                      ,When sad did things more slowly in last 7d
+cisah3c                      ,When sad got less talkative in last 7d
+cisah4                       ,Guilty or blamed themself unnecessarily last 7d
+cisah5                       ,Felt not so good as other people in last 7d
+cisai8                       ,How unpleasant was the worrying in last 7d
+cisaj8                       ,How unpleasant was the general anxiety last 7d
+cisan1                       ,Unpleasant thoughts kept appearing last 30d
+cisao1                       ,Feelings precluded things last 7d
+cisao1a                      ,Feelings precluded more than once last 7d
+derived_A_FRAMINGHAM_CHD_LDL ,Low LDL (Framingham criteria)
+derived_A_GLOBAL_RISK        ,Global risk score (Framingham)
+derived_A_RCPCIRVARIZESULT30D,self-reported varicose vein surgery last 30d
+derived_A_VIFA30_PMCAT       ,Familial income
+derived_cogA_FLUENCIA_LETRAF ,Fluency score with words with the letter F
+derived_nle                  ,Any negative life event
+derived_usga1                ,Carotid artery intima-media thickness
+EKG_a_ecgmc_bcrd_hae         ,Complete right bundle block + left anterior hemiblock
+EKG_a_ecgmc_esv              ,ventricular extrasystole
+EKG_a_ecgmc_fluttera         ,Atrial Flutter
+EKG_a_ecgmc_hve_stt          ,Hipertrofia ventricular left with  ST-T alterations
+EKG_a_ecgmc_im               ,Myocardial Infarction
+EKG_a_ecgmc_mp               ,Artificial pacemaker
+EKG_a_ecgmc_qmenor_stt       ,Lower Q with ST-T alterations
+EKG_a_ecgmc_qualquer_ex_vent ,Any extrasystole
+EKG_a_ecgmc_rvd              ,High R waves right ventricle
+EKG_a_ecgmc_ts               ,Sinus tachycardia
+EKG_a_vfccl_triangindex_dt   ,Triangular Index VFCDT
+home_info_vifa11             ,Has children
+meds_atenolol                ,Usage of Atenolol
+mentalvar__TAG               ,GAD - Generalized Anxiety Disorder
+mentalvar__TOC               ,OCD - Obsessive Compulsive Disorder
+mentalvar_A_SINTDEP          ,Depression symptoms
+mentalvar_A_SINTMEMORIA      ,Concentration symptoms
+metadata_ecga2               ,V4 value
+negativelifeevents_evea12    ,Severe financial difficulties in last 12m
+neighborhood_viza06          ,Physical activities conditions in neighbourhood
+others_cssa3                 ,Usage of aspirin or others for anti-coagulation
+others_esca03                ,Work-related self-evaluation
+social_support_capa57        ,Someone takes care of children when away
