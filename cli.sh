@@ -3,23 +3,26 @@
 set -eu
 
 print_usage() {
-  printf "Usage: ..."
-  printf "  -c CPU : number of cpus"
-  printf "  -d DURATION : duration in hh:mm:ss for slurm"
-  printf "  -s : use slurm (sbatch)"
-  printf "  -t : quick verification"
+  printf "Usage:\n"
+  printf "  -h H : show usage help\n"
+  printf "  -c CPU : number of cpus\n"
+  printf "  -d DURATION : duration in hh:mm:ss for slurm\n"
+  printf "  -s : use slurm (sbatch)\n"
+  printf "  -t : quick verification\n"
 }
 
 serious=true
 slurm=false
 cpus=1
 
-while getopts 'c:d:st' flag; do
+while getopts 'c:d:sth' flag; do
   case "${flag}" in
     c) cpus="${OPTARG}" ;;
     d) duration="${OPTARG}" ;;
     s) slurm='true' ;;
     t) serious='false' ;;
+    h) print_usage
+       exit 0 ;;
     *) print_usage
        exit 1 ;;
   esac
