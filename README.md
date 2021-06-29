@@ -3,5 +3,5 @@
 ## Usage
 
 ```{r}
-./entrypoint.sh --help
+./cli.sh -h
 ```
