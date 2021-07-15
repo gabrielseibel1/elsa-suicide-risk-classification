@@ -1,0 +1,161 @@
+# Hyperparameters
+
+```{r setup}
+knitr::opts_knit$set(root.dir = '../..') # this should be knitted from the repo root directory
+```
+
+Setup
+
+```{r}
+
+source("scripts/setup.R")
+
+getmode <- function(v) {
+  uniqv <- unique(v)
+  uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+```
+
+## Hyperparameters for NB
+
+```{r}
+# naive bayes (manual, constant)
+as_tibble(expand.grid(usekernel = c(TRUE, FALSE), laplace = c(0, 1), adjust = 1))
+```
+
+
+```{r}
+
+results <- get_models("naive_bayes")$path %>%
+  map(
+    ~readRDS(.)$fit$results %>%
+      arrange(desc(F2), F2SD) %>%
+      head(1)
+  ) %>%
+  bind_rows() %>%
+  as_tibble()
+
+results
+
+```
+
+
+```{r}
+
+cli::cat_line("adjust ", getmode(results$adjust))
+cli::cat_line("laplace ", getmode(results$laplace))
+cli::cat_line("usekernel ", getmode(results$usekernel))
+
+```
+
+
+## Hyperparameters for EN
+
+```{r}
+# elastic net (automatic/default, constant)
+as_tibble(getModelInfo("glmnet")[[1]]$grid(len = 5))
+```
+
+
+```{r}
+
+results <- get_models("glmnet")$path %>%
+  map(
+    ~readRDS(.)$fit$results %>%
+      arrange(desc(F2), F2SD) %>%
+      head(1)
+  ) %>%
+  bind_rows() %>%
+  as_tibble()
+
+results
+
+```
+
+
+```{r}
+
+cli::cat_line("alpha ", getmode(results$alpha))
+cli::cat_line("lambda ", getmode(results$lambda))
+
+```
+
+## Hyperparameters for RF
+
+```{r}
+# random forest (automatic/default, parameterized on varied number of colums)
+x <- tibble( # exemple features ( ncol(x) == 8 )
+  a = numeric(), b = numeric(), c = numeric(), d = numeric(), e = numeric(), f = numeric(), g = numeric(), h = numeric())
+as_tibble(expand.grid(mtry = caret::var_seq(p = ncol(x), classification = TRUE, len = 5), min.node.size = 1, splitrule = c("gini", "extratrees")))
+```
+
+
+```{r}
+
+results <- get_models("ranger")$path %>%
+  map(
+    ~readRDS(.)$fit$results %>%
+      arrange(desc(F2), F2SD) %>%
+      head(1)
+  ) %>%
+  bind_rows() %>%
+  as_tibble()
+
+results
+
+```
+
+
+```{r}
+
+cli::cat_line("mtry ", getmode(results$mtry))
+cli::cat_line("min.node.size ", getmode(results$min.node.size))
+cli::cat_line("splitrule ", getmode(results$splitrule))
+
+```
+
+
+## Parameters for `train` and `rfe`
+
+```{r}
+# `method` = "glmnet", "ranger", or "naive_bayes"
+
+# caret::rfe(
+#   recipe(Class ~ ., data = train_data) %>% step_preprocess(method), data = train_data,
+#   method = method,
+#   metric = "F2",
+#   maximize = TRUE,
+#   sizes = 2^(3:9),
+#   rfeControl = rfeControl(rerank = TRUE, method = "repeatedcv", number = 10, repeats = 3)
+# )
+
+# caret::train(
+#   x, y,
+#   method = method,
+#   metric = "F2",
+#   maximize = TRUE,
+#   tuneLength = 5,
+#   tuneGrid = hyperparameters_grid(method),
+#   trControl = trainControl(
+#     method = "repeatedcv", number = 5, repeats = 2,
+#     summaryFunction = f2_summary, search = "grid", classProbs = TRUE, trim = TRUE
+#   ),
+#   importance = 'impurity' # so that we can use varImp with ranger
+# )
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
