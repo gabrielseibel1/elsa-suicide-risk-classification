@@ -1,0 +1,124 @@
+# Features
+
+## Setup
+
+```{r setup}
+knitr::opts_knit$set(root.dir = '../..') # this should be knitted from the repo root directory
+```
+
+```{r}
+source("scripts/setup.R")
+descrs <- read_csv("reports/results/models_and_evals/summary/best_variables_manual_descr.csv")
+```
+
+## Analyse best features
+
+```{r}
+
+get_imps <- function(method) {
+  imps <- tibble(model = character(), feature = character(), rank = numeric(), total = numeric(), imp = numeric())
+  for (path in get_models_paths(method)$path) {
+    model <- readRDS(path)
+    var_imp <- varImp(model)
+    var_imps <- tibble(var = row.names(var_imp), imp = var_imp[[1]])
+
+    total <- nrow(var_imps)
+    for (i in seq_len(total)) {
+      imps %<>% add_case(model = path, feature = var_imps$var[i], rank = i, total = total, imp = var_imps$imp[i])
+    }
+  }
+  imps
+}
+
+imps_nb <- get_imps(METHOD_NAIVE_BAYES)
+imps_glm <- get_imps(METHOD_GLMNET)
+imps_rf <- get_imps(METHOD_RF)
+
+imps_nb
+imps_glm
+imps_rf
+```
+
+
+
+```{r}
+get_imps_avg <- function(imps) imps %>%
+  group_by(feature) %>%
+  summarise(count = n(), imp = mean(imp)) %>%
+  arrange(desc(imp)) %>%
+  mutate(imp = rescale(imp), frequency = count / 30) %>%
+  left_join(descrs, by = "feature") %>%
+  mutate(label = coalesce(label, feature))
+
+imps_avg_nb <- get_imps_avg(imps_nb)
+imps_avg_glm <- get_imps_avg(imps_glm)
+imps_avg_rf <- get_imps_avg(imps_rf)
+
+imps_avg_nb
+imps_avg_glm
+imps_avg_rf
+```
+
+
+```{r}
+plot_imps_avg <- function(imps_avg, method) {
+  p <- imps_avg %>%
+    head(25) %>%
+    ggplot(aes(x = imp, y = reorder(label, imp), fill = frequency)) +
+    geom_col() +
+    ggtitle(paste("Feature importance overall -", get_method_true_name(method))) +
+    xlab("Importance") +
+    ylab("Feature") +
+    labs(fill = "Frequency") +
+    # scale_fill_viridis(
+    #   discrete = FALSE,
+    #   option = "turbo",
+    #   breaks = c(0, 0.5, 1),
+    #   limits = c(0, 1)
+    # ) +
+    xlim(0, 1) +
+    theme_ipsum_rc()
+  plot(p)
+}
+
+plot_imps_avg(imps_avg_nb, METHOD_NAIVE_BAYES)
+plot_imps_avg(imps_avg_glm, METHOD_GLMNET)
+plot_imps_avg(imps_avg_rf, METHOD_RF)
+```
+
+
+```{r}
+
+imps_avg <- imps_avg_nb %>%
+  left_join(imps_avg_glm, by = "feature") %>%
+  left_join(imps_avg_rf, by = "feature") %>%
+  replace_na(list(frequency = 0, frequency.x = 0, frequency.y = 0,
+                  count = 0, count.x = 0, count.y = 0,
+                  imp = 0, imp.x = 0, imp.y = 0)) %>%
+  mutate(frequency = (frequency + frequency.x + frequency.y) / 3) %>%
+  mutate(count = (count + count.x + count.y) / 3) %>%
+  mutate(imp = (imp + imp.x + imp.y) / 3) %>%
+  select(feature, label, count, imp, frequency) %>%
+  head(25)
+imps_avg
+```
+
+```{r}
+plot_imps_avg(imps_avg, METHOD_ENSEMBLE)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

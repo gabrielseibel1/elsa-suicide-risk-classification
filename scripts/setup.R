@@ -5,7 +5,7 @@ get_env_or_default <- function(env, default) {
 
 IS_SLURM_EXECUTION <- get_env_or_default('ESRP_SLURM_EXEC', FALSE)
 IS_SERIOUS_EXECUTION <- get_env_or_default('ESRP_SERIOUS_EXEC', TRUE)
-N_WORKERS <- get_env_or_default('ESRP_MAX_CPUS', 6)
+N_WORKERS <- get_env_or_default('ESRP_MAX_CPUS', 4)
 BASE_SEED <- 42
 set.seed(BASE_SEED)
 
@@ -44,7 +44,8 @@ pacman::p_load(
   e1071,
   adabag,
   RSNNS,
-  multiROC
+  multiROC,
+  scales
 )
 
 future::plan(future::multicore(workers = N_WORKERS))

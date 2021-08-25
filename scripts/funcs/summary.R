@@ -57,7 +57,7 @@ get_method_true_name <- function(method) {
   ))
 }
 
-get_models <- function(method) {
+get_models_paths <- function(method) {
   filenames <- list.files(
     paste0("reports/results/models_and_evals/", method, ":::MODE_PRESENCE:::LABEL_H:::SYMP_TRUE:::CV_TRUE"),
     pattern = ".*model.*",
@@ -241,7 +241,7 @@ plot_var_imps <- function(methods = c(METHOD_GLMNET, METHOD_RF, METHOD_NAIVE_BAY
   # plot var imp heatmap and column chart for trained models
   aggregation_var_imps <- init_var_imps()
   for (method in methods) {
-    models <- get_models(method)
+    models <- get_models_paths(method)
     var_imps <- get_var_imps(models)
     var_imps_summary <- get_var_imps_summary(var_imps)
     var_imps_short_summary <- head(var_imps_summary, N_RESAMPLES)
@@ -277,7 +277,7 @@ plot_var_imps <- function(methods = c(METHOD_GLMNET, METHOD_RF, METHOD_NAIVE_BAY
 
 plot_rfe_results <- function(methods = c(METHOD_GLMNET, METHOD_RF, METHOD_NAIVE_BAYES)) {
   for (method in methods) {
-    results <- get_models(method)$path %>%
+    results <- get_models_paths(method)$path %>%
       map(~readRDS(.)$results) %>%
       bind_rows() %>%
       as_tibble()
