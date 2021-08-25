@@ -26,7 +26,7 @@ as_tibble(expand.grid(usekernel = c(TRUE, FALSE), laplace = c(0, 1), adjust = 1)
 
 ```{r}
 
-results <- get_models("naive_bayes")$path %>%
+results <- get_models_paths("naive_bayes")$path %>%
   map(
     ~readRDS(.)$fit$results %>%
       arrange(desc(F2), F2SD) %>%
@@ -59,7 +59,7 @@ as_tibble(getModelInfo("glmnet")[[1]]$grid(len = 5))
 
 ```{r}
 
-results <- get_models("glmnet")$path %>%
+results <- get_models_paths("glmnet")$path %>%
   map(
     ~readRDS(.)$fit$results %>%
       arrange(desc(F2), F2SD) %>%
@@ -92,7 +92,7 @@ as_tibble(expand.grid(mtry = caret::var_seq(p = ncol(x), classification = TRUE, 
 
 ```{r}
 
-results <- get_models("ranger")$path %>%
+results <- get_models_paths("ranger")$path %>%
   map(
     ~readRDS(.)$fit$results %>%
       arrange(desc(F2), F2SD) %>%

@@ -1,6 +1,7 @@
 feature                      ,label
 bp_derivedA_RAZAOPAS         ,Ankle brachial index
 cisab5                       ,Tired for more than 3h in last 7d
+cisac6                       ,Concentration problems precluded activities in last 7d
 cisae7                       ,Argument fight in last 7d
 cisag1                       ,Sad/depressed in last 30d
 cisag2                       ,Enjoyed things as used to in last 30d
@@ -18,20 +19,20 @@ cisah5                       ,Felt not so good as other people in last 7d
 cisai8                       ,How unpleasant was the worrying in last 7d
 cisaj8                       ,How unpleasant was the general anxiety last 7d
 cisan1                       ,Unpleasant thoughts kept appearing last 30d
-cisao1                       ,Feelings precluded things last 7d
-cisao1a                      ,Feelings precluded more than once last 7d
+cisao1                       ,Feelings precluded activities last 7d
+cisao1a                      ,Feelings precluded activities more than once last 7d
 derived_A_FRAMINGHAM_CHD_LDL ,Low LDL (Framingham criteria)
 derived_A_GLOBAL_RISK        ,Global risk score (Framingham)
-derived_A_RCPCIRVARIZESULT30D,self-reported varicose vein surgery last 30d
+derived_A_RCPCIRVARIZESULT30D,Self-reported varicose vein surgery last 30d
 derived_A_VIFA30_PMCAT       ,Familial income
 derived_cogA_FLUENCIA_LETRAF ,Fluency score with words with the letter F
 derived_nle                  ,Any negative life event
 derived_usga1                ,Carotid artery intima-media thickness
 EKG_a_ecgmc_bcrd_hae         ,Complete right bundle block + left anterior hemiblock
-EKG_a_ecgmc_esv              ,ventricular extrasystole
+EKG_a_ecgmc_esv              ,Ventricular extrasystole
 EKG_a_ecgmc_fluttera         ,Atrial Flutter
-EKG_a_ecgmc_hve_stt          ,Hipertrofia ventricular left with  ST-T alterations
-EKG_a_ecgmc_im               ,Myocardial Infarction
+EKG_a_ecgmc_hve_stt          ,Ventricular hypertrophy left with ST-T alterations
+EKG_a_ecgmc_im               ,Myocardial infarction
 EKG_a_ecgmc_mp               ,Artificial pacemaker
 EKG_a_ecgmc_qmenor_stt       ,Lower Q with ST-T alterations
 EKG_a_ecgmc_qualquer_ex_vent ,Any extrasystole
