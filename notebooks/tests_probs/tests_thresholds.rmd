@@ -1,0 +1,78 @@
+# Models tests thresholds
+
+Setup
+
+```{r setup}
+knitr::opts_knit$set(root.dir = '../..') # this should be knitted from the repo root directory
+```
+
+
+```{r}
+
+source("scripts/setup.R")
+```
+
+Load tests
+
+```{r}
+
+# TODO: enumerate folds
+tests <- readRDS("notebooks/tests_probs/tests.rds")
+tests
+```
+
+Build predictions of a series model ("sm"). Make it a function since it will be used for different thresholds.
+
+```{r}
+
+get_sm_tests <- function(tests, nb_threshold, rf_threshold) tests %>%
+  mutate(nb_pred = nb > nb_threshold, rf_pred = rf > rf_threshold) %>%
+  mutate(sm_pred = nb_pred & rf_pred) %>%
+  transmute(obs = as.factor(RISK), pred = as.factor(sm_pred))
+
+```
+
+Test it with .5
+
+```{r}
+
+tests_50pct <- get_sm_tests(tests, .5, .5)
+tests_50pct
+
+```
+
+
+```{r}
+
+metrics <- cm <- caret::confusionMatrix(tests_50pct$pred, tests_50pct$obs, "TRUE", mode = "everything")
+metrics
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
