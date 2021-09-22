@@ -1,0 +1,51 @@
+```{r setup}
+knitr::opts_knit$set(root.dir = '../..') # this should be knitted from the repo root directory
+```
+
+
+```{r}
+
+source("scripts/setup.R")
+```
+
+
+```{r}
+fold_data <- readRDS("reports/results/models_and_evals/glmnet:::MODE_PRESENCE:::LABEL_H:::SYMP_TRUE:::CV_TRUE/data_info.rds")
+fold_data$splits
+```
+
+
+```{r}
+
+tests <- tibble()
+
+for (i in seq_len(nrow(fold_data))) {
+
+  tests_glmnet <- get_test_from_saved_model(METHOD_GLMNET, fold_data$splits[[i]], i, 403) %>%
+    transmute(
+      glmnet = POSITIVE,
+      RISK = map_lgl(obs, ~. == 'POSITIVE')
+    )
+
+  tests_rf <- get_test_from_saved_model(METHOD_RF, fold_data$splits[[i]], i, 403) %>%
+    transmute(rf = POSITIVE)
+
+  tests_nb <- get_test_from_saved_model(METHOD_NAIVE_BAYES, fold_data$splits[[i]], i, 403) %>%
+    transmute(nb = POSITIVE)
+
+  tests_ensemble <- get_test_from_saved_model(METHOD_ENSEMBLE, fold_data$splits[[i]], i, 403) %>%
+    transmute(ensemble = POSITIVE)
+
+  tests_fold <- tests_glmnet %>% bind_cols(tests_rf) %>% bind_cols(tests_nb) %>% bind_cols(tests_ensemble)
+
+  tests <- bind_rows(tests, tests_fold)
+}
+
+tests %<>% select(RISK, everything())
+as_tibble(tests)
+```
+
+```{r}
+
+saveRDS(tests, "notebooks/tests_probs/tests.rds")
+```
