@@ -144,11 +144,24 @@ sum_metrics
 ```
 
 
+```{r}
+
+sum_metrics_pruned <- sum_metrics %>% filter(sens_mean > 0.6 & spec_mean > 0.5)
+
+sum_metrics_pruned %>% head()
+```
 
 
+```{r}
+sum_metrics_pruned %>% dplyr::arrange(desc(sens_mean)) %>% head()
+```
 
+```{r}
+data <- sum_metrics_pruned %>% dplyr::arrange(desc(sens_mean))
 
-
+ggplot2::ggplot(data, aes(x = spec_mean, y = sens_mean)) +
+        ggplot2::geom_point()
+```
 
 
 
