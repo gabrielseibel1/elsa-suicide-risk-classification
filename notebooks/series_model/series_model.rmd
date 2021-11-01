@@ -45,7 +45,7 @@ for (i in seq_len(nrow(fold_data))) {
 }
 
 all_tests %<>% select(RISK, everything())
-as_tibble(all_tests)
+all_tests
 ```
 
 
@@ -68,7 +68,8 @@ get_sm_tests(all_tests, .5, .5, 1)
 
 get_metrics_for_thresholds <- function(threshold_nb, threshold_rf, fold_nr) {
   tests <- get_sm_tests(all_tests, threshold_nb, threshold_rf, fold_nr)
-  metrics <- caret::confusionMatrix(tests$pred, tests$obs, "TRUE", mode = "everything")$byClass
+  cm <- caret::confusionMatrix(tests$pred, tests$obs, "TRUE", mode = "everything")
+  metrics <- cm$byClass
 
   tibble(
     fold = fold_nr,
@@ -79,11 +80,18 @@ get_metrics_for_thresholds <- function(threshold_nb, threshold_rf, fold_nr) {
     ppv = metrics["Pos Pred Value"],
     npv = metrics["Neg Pred Value"],
     prec = metrics["Precision"],
-    rec = metrics["Recall"]
+    rec = metrics["Recall"],
+    tp = cm$table[[1]],
+    fn = cm$table[[2]],
+    fp = cm$table[[3]],
+    tn = cm$table[[4]]
   ) %>%
     mutate(
-      f2 = 5 * prec * rec / (5 * prec + rec)
-    )
+      f2 = 5 * prec * rec / (5 * prec + rec),
+      pos = tp + fn,
+      neg = tn + fp
+    ) %>%
+    select(fold, thresh_nb, thresh_rf, f2, everything())
 
 }
 
@@ -96,12 +104,7 @@ For a set of thresholds, for all folds, get performance estimate metrics
 ```{r}
 
 ts <- seq(0.05, 0.95, by = 0.05)
-(thresholds_metrics <- expand.grid(folds = 1:30, thresh_nb = ts, thresh_rf = ts))
-
-```
-
-
-```{r}
+thresholds_metrics <- expand.grid(folds = 1:30, thresh_nb = ts, thresh_rf = ts)
 
 folds <- thresholds_metrics$folds
 nbs <- thresholds_metrics$thresh_nb
@@ -111,7 +114,7 @@ all_metrics <- pmap_dfr(list(nbs, rfs, folds), get_metrics_for_thresholds)
 head(all_metrics)
 ```
 
-Take mean and std dev across folds
+Take mean and std dev across folds (or sum for confusion matrix)
 
 ```{r}
 sum_metrics <- all_metrics %>%
@@ -137,30 +140,47 @@ sum_metrics <- all_metrics %>%
     rec_sd = sd(rec),
 
     f2_mean = mean(f2),
-    f2_sd = sd(f2)
+    f2_sd = sd(f2),
+
+    tp_sum = sum(fp),
+    fn_sum = sum(fn),
+    fp_sum = sum(fp),
+    tn_sum = sum(tn),
+
+    pos_sum = sum(pos),
+    neg_sum = sum(neg)
   )
 
 sum_metrics
 ```
 
-
 ```{r}
+sum_metrics_tidy <- sum_metrics %>%
+  filter(sens_mean > 0.6 & spec_mean > 0.5) %>%
+  mutate(sens_over_spec = sens_mean / spec_mean) %>%
+  arrange(desc(sens_over_spec)) %>%
+  select(sens_over_spec, everything())
 
-sum_metrics_pruned <- sum_metrics %>% filter(sens_mean > 0.6 & spec_mean > 0.5)
-
-sum_metrics_pruned %>% head()
-```
-
-
-```{r}
-sum_metrics_pruned %>% dplyr::arrange(desc(sens_mean)) %>% head()
+sum_metrics_tidy
 ```
 
 ```{r}
-data <- sum_metrics_pruned %>% dplyr::arrange(desc(sens_mean))
 
-ggplot2::ggplot(data, aes(x = spec_mean, y = sens_mean)) +
-        ggplot2::geom_point()
+ggplot2::ggplot(sum_metrics_tidy, aes(x = spec_mean, y = sens_mean, colour = sens_over_spec)) +
+  theme_ipsum_rc() +
+  scale_color_viridis(limits = c(0, 2)) +
+  ggplot2::scale_y_continuous(breaks = seq(0, 1, by = .1)) +
+  ggplot2::scale_x_continuous(breaks = seq(0, 1, by = .1)) +
+  ggplot2::geom_point() +
+  ggplot2::geom_abline(slope = 1, intercept = 0)
+
+ggplot2::ggplot(sum_metrics_tidy, aes(x = thresh_nb, y = thresh_rf, colour = sens_over_spec)) +
+  theme_ipsum_rc() +
+  scale_color_viridis(limits = c(0, 2)) +
+  ggplot2::scale_y_continuous(breaks = seq(0, 1, by = .2)) +
+  ggplot2::scale_x_continuous(breaks = seq(0, 1, by = .2)) +
+  ggplot2::geom_point(aes(size = 14))
+
 ```
 
 
