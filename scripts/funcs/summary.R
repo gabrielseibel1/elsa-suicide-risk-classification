@@ -165,12 +165,12 @@ get_var_imp_heatmap <- function(var_imps, features_to_include, method) {
       option = get_plot_color_option(method),
       breaks = c(0, 0.5, 1),
       limits = c(0, 1)
-    ) +
-    theme_ipsum_rc()
+    ) #+
+    #theme_ipsum_rc()
 }
 
 get_var_imps_summary_col_plot <- function(var_imps_summary, method) {
-  descrs <- read_csv("reports/results/models_and_evals/summary/best_variables_manual_descr.csv")
+  descrs <- read_best_vars_manual_descrs()
   var_imps_summary$label <- left_join(x = var_imps_summary, y = descrs, by = "feature")$label
 
   ggplot(var_imps_summary, aes(x = importance, y = reorder(label, importance), fill = importance)) +
@@ -185,8 +185,8 @@ get_var_imps_summary_col_plot <- function(var_imps_summary, method) {
       breaks = c(0, 0.5, 1),
       limits = c(0, 1)
     ) +
-    xlim(0, 1) +
-    theme_ipsum_rc()
+    xlim(0, 1) #+
+    #theme_ipsum_rc()
 }
 
 get_save_and_plot_performance_summary_all_models <- function() {
@@ -248,20 +248,20 @@ plot_var_imps <- function(methods = c(METHOD_GLMNET, METHOD_RF, METHOD_NAIVE_BAY
     var_imps_heatmap <- get_var_imp_heatmap(var_imps, var_imps_short_summary$feature, method)
     var_imps_cols <- get_var_imps_summary_col_plot(var_imps_short_summary, method)
 
-    print(var_imps_heatmap)
-    print(var_imps_cols)
+    save_and_plot_var_imps(method, var_imps_cols, var_imps_heatmap, var_imps_short_summary)
 
     best_vars_table <- bind_rows(best_vars_table, var_imps_short_summary)
     aggregation_var_imps <- aggregation_var_imps + var_imps
   }
 
   # plots for aggregation
+  method <- METHOD_ENSEMBLE
   var_imps <- aggregation_var_imps / length(methods)
   var_imps$order <- 1:N_RESAMPLES
   var_imps_summary <- get_var_imps_summary(var_imps)
   var_imps_short_summary <- head(var_imps_summary, N_RESAMPLES)
-  var_imps_heatmap <- get_var_imp_heatmap(var_imps, var_imps_short_summary$feature, METHOD_ENSEMBLE)
-  var_imps_cols <- get_var_imps_summary_col_plot(var_imps_short_summary, METHOD_ENSEMBLE)
+  var_imps_heatmap <- get_var_imp_heatmap(var_imps, var_imps_short_summary$feature, method)
+  var_imps_cols <- get_var_imps_summary_col_plot(var_imps_short_summary, method)
   best_vars_table <- bind_rows(best_vars_table, var_imps_short_summary)
 
   best_vars_descriptions <- get_features_descriptions(best_vars_table$feature)
@@ -271,8 +271,7 @@ plot_var_imps <- function(methods = c(METHOD_GLMNET, METHOD_RF, METHOD_NAIVE_BAY
   print(best_vars_descriptions, n = nrow(best_vars_descriptions))
   readr::write_csv(best_vars_descriptions, BEST_VARS_DESCR_FILE_NAME)
 
-  print(var_imps_heatmap)
-  print(var_imps_cols)
+  save_and_plot_var_imps(method, var_imps_cols, var_imps_heatmap, var_imps_short_summary)
 }
 
 plot_rfe_results <- function(methods = c(METHOD_GLMNET, METHOD_RF, METHOD_NAIVE_BAYES)) {
