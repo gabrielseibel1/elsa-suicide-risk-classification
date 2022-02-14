@@ -50,12 +50,24 @@ save_data_info <- function(data_info, id) save_rds(data_info, id, DATA_INFO_RDS)
 
 read_data_info <- function(id) read_rds(id, DATA_INFO_RDS)
 
+read_best_vars_manual_descrs <- function() read_csv(paste0(SUMMARY_FOLDER_NAME, "/best_variables_manual_descr.csv"))
+
 save_evaluation_csv <- function(summary, id) save_csv(summary, id, PERFORMANCE_CSV)
 
 save_evaluation <- function(evaluation, id) {
   evaluation$id <- id
   evaluation <- evaluation %>% select(id, everything()) # put id first
   save_csv(evaluation, id, PERFORMANCE_CSV)
+}
+
+save_and_plot_var_imps <- function(method, var_imps_cols, var_imps_heatmap, var_imps_short_summary) {
+  readr::write_rds(var_imps_short_summary, paste0(SUMMARY_FOLDER_NAME, "/var_imp_", method, ".rds"))
+
+  print(var_imps_heatmap)
+      ggsave(paste0(SUMMARY_FOLDER_NAME, "/var_imp_resample_", method, ".pdf"), units = "px", width = 2000, height = 1100, dpi = 250)
+
+  print(var_imps_cols)
+  ggsave(paste0(SUMMARY_FOLDER_NAME, "/var_imp_", method, ".pdf"), units = "px", width = 2000, height = 1100, dpi = 250)
 }
 
 print_section <- function(message, id = "") {
