@@ -4,7 +4,6 @@ knitr::opts_knit$set(root.dir = '../..') # this should be knitted from the repo 
 
 
 ```{r}
-
 source("scripts/setup.R")
 ```
 
@@ -58,6 +57,7 @@ Build predictions of a series model ("sm"). Make it a function since it will be 
 get_sm_tests <- function(tests, nb_threshold, rf_threshold, fold_nr) tests %>%
   filter(fold == fold_nr) %>%
   mutate(nb_pred = nb > nb_threshold, rf_pred = rf > rf_threshold) %>%
+  filter(nb_pred == TRUE) %>%
   mutate(sm_pred = nb_pred & rf_pred) %>%
   transmute(obs = as.factor(RISK), pred = as.factor(sm_pred))
 
@@ -67,7 +67,6 @@ get_sm_tests(all_tests, .5, .5, 1)
 
 
 ```{r}
-
 get_metrics_for_thresholds <- function(threshold_nb, threshold_rf, fold_nr) {
   tests <- get_sm_tests(all_tests, threshold_nb, threshold_rf, fold_nr)
   cm <- caret::confusionMatrix(tests$pred, tests$obs, "TRUE", mode = "everything")
@@ -168,7 +167,6 @@ sum_metrics_tidy
 ```
 
 ```{r}
-
 ggplot2::ggplot(sum_metrics_tidy, aes(x = spec_mean, y = sens_mean, colour = sens_over_spec)) +
   theme_ipsum_rc() +
   scale_color_viridis(limits = c(0, 2)) +
@@ -176,46 +174,25 @@ ggplot2::ggplot(sum_metrics_tidy, aes(x = spec_mean, y = sens_mean, colour = sen
   ggplot2::scale_x_continuous(breaks = seq(0, 1, by = .1)) +
   ggplot2::geom_point() +
   ggplot2::geom_abline(slope = 1, intercept = 0)
+```
 
+```{r}
 ggplot2::ggplot(sum_metrics_tidy, aes(x = thresh_nb, y = thresh_rf, colour = sens_over_spec)) +
   theme_ipsum_rc() +
   scale_color_viridis(limits = c(0, 2)) +
-  ggplot2::scale_y_continuous(breaks = seq(0, 1, by = .2)) +
+  ggplot2::scale_y_continuous(breaks = seq(0, 1, by = .05)) +
   ggplot2::scale_x_continuous(breaks = seq(0, 1, by = .2)) +
   ggplot2::geom_point(aes(size = 14))
 
 ```
 
+```{r}
+final_model_perf <- sum_metrics_tidy %>% 
+  filter(thresh_nb == 0.5 & thresh_rf == 0.5) %>%
+  t() %>%
+  as_tibble() %>%
+  transmute(k = colnames(sum_metrics_tidy), v = V1)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(final_model_perf, n = Inf)
+```
 
