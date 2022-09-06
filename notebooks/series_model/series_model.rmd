@@ -57,7 +57,7 @@ Build predictions of a series model ("sm"). Make it a function since it will be 
 get_sm_tests <- function(tests, nb_threshold, rf_threshold, fold_nr) tests %>%
   filter(fold == fold_nr) %>%
   mutate(nb_pred = nb > nb_threshold, rf_pred = rf > rf_threshold) %>%
-  filter(nb_pred == TRUE) %>%
+  #filter(nb_pred == TRUE) %>%
   mutate(sm_pred = nb_pred & rf_pred) %>%
   transmute(obs = as.factor(RISK), pred = as.factor(sm_pred))
 
@@ -123,6 +123,9 @@ sum_metrics <- all_metrics %>%
   replace_na(list(sens = 0, spec = 0, ppv = 0, npv = 0, prec = 0, rec = 0, f2 = 0)) %>%
   group_by(thresh_nb, thresh_rf) %>%
   summarise(
+    f2_mean = mean(f2),
+    f2_sd = sd(f2),
+
     sens_mean = mean(sens),
     sens_sd = sd(sens),
 
@@ -141,9 +144,6 @@ sum_metrics <- all_metrics %>%
     rec_mean = mean(rec),
     rec_sd = sd(rec),
 
-    f2_mean = mean(f2),
-    f2_sd = sd(f2),
-
     tp_sum = sum(fp),
     fn_sum = sum(fn),
     fp_sum = sum(fp),
@@ -160,7 +160,7 @@ sum_metrics
 sum_metrics_tidy <- sum_metrics %>%
   filter(sens_mean > 0.6 & spec_mean > 0.5) %>%
   mutate(sens_over_spec = sens_mean / spec_mean) %>%
-  arrange(desc(sens_over_spec)) %>%
+  arrange(desc(f2_mean)) %>%
   select(sens_over_spec, everything())
 
 sum_metrics_tidy
@@ -187,8 +187,8 @@ ggplot2::ggplot(sum_metrics_tidy, aes(x = thresh_nb, y = thresh_rf, colour = sen
 ```
 
 ```{r}
-final_model_perf <- sum_metrics_tidy %>% 
-  filter(thresh_nb == 0.5 & thresh_rf == 0.5) %>%
+final_model_perf <- sum_metrics_tidy %>%
+  head(1) %>%
   t() %>%
   as_tibble() %>%
   transmute(k = colnames(sum_metrics_tidy), v = V1)
