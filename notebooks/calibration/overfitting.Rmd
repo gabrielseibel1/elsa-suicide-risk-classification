@@ -1,0 +1,24 @@
+```{r setup}
+knitr::opts_knit$set(root.dir = '../..') # this should be knitted from the repo root directory
+```
+
+```{r}
+source("scripts/setup.R")
+```
+
+
+```{r}
+fold_data <- readRDS("reports/results/models_and_evals/glmnet:::MODE_PRESENCE:::LABEL_H:::SYMP_TRUE:::CV_TRUE/data_info.rds")
+```
+
+```{r}
+all_tests <- readRDS("all_tests.rds")
+```
+
+```{r}
+all_tests %>% dplyr::transmute(.pred_good = glmnet, Class = RISK) %>% cal_plot_breaks(Class, .pred_good, num_breaks = 10)
+all_tests %>% dplyr::transmute(.pred_good = rf, Class = RISK) %>% cal_plot_breaks(Class, .pred_good, num_breaks = 10)
+all_tests %>% dplyr::transmute(.pred_good = nb, Class = RISK) %>% cal_plot_breaks(Class, .pred_good, num_breaks = 10)
+all_tests %>% dplyr::transmute(.pred_good = ensemble, Class = RISK) %>% cal_plot_breaks(Class, .pred_good, num_breaks = 10)
+```
+

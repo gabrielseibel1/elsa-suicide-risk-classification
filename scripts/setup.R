@@ -45,7 +45,9 @@ pacman::p_load(
   adabag,
   RSNNS,
   multiROC,
-  scales
+  scales,
+  tidymodels,
+  probably
 )
 
 future::plan(future::multicore(workers = N_WORKERS))
